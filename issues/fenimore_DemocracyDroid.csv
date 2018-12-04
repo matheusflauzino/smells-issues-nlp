@@ -1,0 +1,113 @@
+repository,state,closed_at,title,label,is_bug,body
+fenimore/DemocracyDroid,open,,Does Not Open Stream In Another Application,[],0,"When opening videos, whether in broadcast or transcript tabs, it will only open within application. When open stream in other application is chosen the broadcast tab says it is unable to open file. The transcript tab videos still open with in application no matter which option is chosen.
+
+My goal is to open videos in VLC to Chromecast since Chromecast isn't available in the Google Play version. "
+fenimore/DemocracyDroid,open,,Request Audio Focus,"[Label(name=""bug""), Label(name=""enhancement""), Label(name=""help wanted"")]",1,https://medium.com/google-developers/audio-focus-3-cdc09da9c122
+fenimore/DemocracyDroid,closed,2018-05-27 17:06:37,Play/Pause in Notification drawer,"[Label(name=""enhancement""), Label(name=""help wanted"")]",0,"We need the notification drawer to have play and pause buttons to controlling playback while the app is in the background :grimacing: 
+
+I've tried doing this a few times and I couldn't figure it out :woman_shrugging: "
+fenimore/DemocracyDroid,closed,2018-05-20 22:25:36,New Logo Design,[],0,"Hi sir, I will to design a new logo for your app. You can tell me about the requirements if it may please you."
+fenimore/DemocracyDroid,closed,2018-09-20 19:07:02,Democracy droid crashes when we click on stream audio,[],0,"
+#### Expected behavior
+By clicking on stream audio we should be able to stream the audio online. 
+
+#### Actual behavior
+When I clicked on the menu on the right side od the video and tried to stream the audio, the application crashed. 
+
+Also the application crashes after using it for some seconds (15 maybe) but that bug has already been reported. 
+
+While I was able to stay on the app for some time, I managed to click on some of the options it has and everything worked fine except for stream video option. 
+
+#### How to reproduce
+- Open the app
+- Click on menu on the right top corner of a particular video
+- Click stream audio option
+- The application will crash. 
+
+* Application: Democracy droid v 3.6.2
+* Operating system: Android 6.0.1
+
+#### Recording Of The Bug
+
+https://youtu.be/68LXTAotiTg
+
+<br /><hr/><em>Posted on <a href=""https://utopian.io/utopian-io/@syedumair/democracy-droid-crashes-when-we-click-on-stream-audio"">Utopian.io -  Rewarding Open Source Contributors</a></em><hr/>"
+fenimore/DemocracyDroid,closed,2018-05-27 14:18:09,Link in app does not match link in repo,"[Label(name=""bug"")]",1,The link on the about section leads to the broken link democracy now.
+fenimore/DemocracyDroid,closed,2018-05-27 08:31:08,Code Refactoring. ,[],0,Cleaned up architecture. Added dependency injection.
+fenimore/DemocracyDroid,closed,2018-01-02 19:46:50,App crashes when video is selected,"[Label(name=""bug"")]",1,"Using version 3.6.1 on Nexus 5x's Android 8.1.0 and the app started crashing recently when I attempt to play video from the broadcast tab. If I don't restart the app immediately via ""open app again"" pop up I hear the first tunes of DN."
+fenimore/DemocracyDroid,closed,2017-12-23 05:10:58,Merge pull request #5 from fenimore/master,[],0,merge
+fenimore/DemocracyDroid,open,,Reload should reload downloads too,[],0,
+fenimore/DemocracyDroid,closed,2017-10-11 15:10:04,Dev,[],0,
+fenimore/DemocracyDroid,closed,2017-11-13 20:33:08,RTL layout (right to left layout) breaks cardview titles,[],0,"go to developer options, and check force right to left layout -- the cardviews no longer show the titles"
+fenimore/DemocracyDroid,closed,2017-08-13 23:56:46,Merge pull request #2 from fenimore/master,[],0,merge from finmores master
+fenimore/DemocracyDroid,open,,New Launcher Icon?,"[Label(name=""question"")]",0,"Is the launcher icon too square? Should I round the edges a bit and drop some shadow on it??!?
+
+@DerrickRocha maybe you have an opinion?"
+fenimore/DemocracyDroid,closed,2017-07-31 21:10:50,Duplicate In Feed,"[Label(name=""bug"")]",1,"The anticipated video and audio links are hard coded with `https`, but these aren't actually used by the rss feed, so duplicates appear"
+fenimore/DemocracyDroid,closed,2018-05-27 14:19:15,Option/Preference for including the tab titles in tabs,"[Label(name=""enhancement""), Label(name=""question"")]",0,"In the most recent release I took out the tab title (""Story"", ""Broadcast"", ""Download""). Some users like it (such as @DerrickRocha), so we should put a shared preference for including the tab titles. Or if the experiment fails, maybe just totally reset and bring back the titles by default.
+
+For the next release we'll just wait and see how it feels 🙂 "
+fenimore/DemocracyDroid,closed,2018-05-27 14:21:47,Reimplement ProgressBar,"[Label(name=""enhancement"")]",0,"I removed the ProgressBar, see d900e71f48b8b72e4d69ab45af314156a743a49e 
+
+```
+       <ProgressBar
+-            android:layout_centerHorizontal=""true""
+-            android:id=""@+id/sBar""
+-            android:minHeight=""20dip""
+-            android:layout_width=""wrap_content""
+-            android:layout_height=""wrap_content""/>
+```
+
+So that way the swipe to refresh is the only refresh animation. But when first opening the app, it's nice to have that yellow ProgressBar, so @DerrickRocha suggested to make
+
+> it so the yellow loading icon doesn't get displayed when a pull to refresh happens. We could pass a Boolean into GetStoryFeed and GetVideoFeed classes indicating if we should show the loading screen. We can check for it in the onPostExecute method in those classes and show the icon if true."
+fenimore/DemocracyDroid,closed,2017-07-29 02:45:28,Linear layout lists,[],0,
+fenimore/DemocracyDroid,closed,2017-07-03 14:41:27,Better icon for headlines story viewholder,"[Label(name=""enhancement""), Label(name=""help wanted"")]",0,
+fenimore/DemocracyDroid,closed,2017-07-03 17:58:52,Prepare for Spanish Language translation,"[Label(name=""enhancement"")]",0,Namely make sure that all hard coded strings are moved to the `strings.xml` resource.
+fenimore/DemocracyDroid,closed,2017-07-03 22:51:55,Story view Audio/Video link is Null before load,"[Label(name=""bug"")]",1,"When clicking to launch a video or audio stream from a stories tab, before the story has loaded, the links will be Null. And the app will crash NullPointer."
+fenimore/DemocracyDroid,closed,2017-05-14 13:35:48,Pull jsoup from jcenter,"[Label(name=""enhancement""), Label(name=""help wanted"")]",0,Is there a reason for `jsoup-1.8.3` being included as binary jar file instead of being pulled from jcenter/mavenCentral?
+fenimore/DemocracyDroid,closed,2017-05-11 13:08:01,Fix merge,[],0,
+fenimore/DemocracyDroid,closed,2017-07-31 21:11:50,Audio Feed has one extra episode than Video,"[Label(name=""bug"")]",1,"The feeds aren't lined up, so the broadcast tab is messed up"
+fenimore/DemocracyDroid,closed,2017-03-09 01:32:54,Add exclusive online comtent,"[Label(name=""enhancement"")]",0,More and more frequently interviews are being continued on the web. DN does not include these in their RSS feed. It would be way cool if your app could include these somehow.
+fenimore/DemocracyDroid,closed,2017-02-04 15:56:37,Crash on airplane mode,"[Label(name=""bug"")]",1,
+fenimore/DemocracyDroid,closed,2017-07-03 13:10:53,Use nav drawer instead of tabs,"[Label(name=""enhancement"")]",0,Big UI  redo to be more  conventional app
+fenimore/DemocracyDroid,closed,2018-05-27 14:20:06,Add chromecast support,"[Label(name=""enhancement""), Label(name=""help wanted""), Label(name=""wontfix"")]",0,harder than it seems...
+fenimore/DemocracyDroid,closed,2017-02-11 16:57:43,Play music in the background,"[Label(name=""enhancement""), Label(name=""help wanted"")]",0,"Use a service to play music 
+- Include a control in the nav bar"
+fenimore/DemocracyDroid,closed,2017-07-03 19:26:44,Add Spanish Language Feed,"[Label(name=""enhancement"")]",0,
+fenimore/DemocracyDroid,closed,2018-05-27 14:20:39,cancel downloads,"[Label(name=""enhancement""), Label(name=""help wanted"")]",0,
+fenimore/DemocracyDroid,closed,2017-02-04 15:56:50,refresh download list on start download,"[Label(name=""enhancement"")]",0,
+fenimore/DemocracyDroid,closed,2017-01-13 23:13:18,reverse sort of downloads,"[Label(name=""enhancement"")]",0,
+fenimore/DemocracyDroid,closed,2017-01-13 23:06:54,Crash on stream,"[Label(name=""bug"")]",1,
+fenimore/DemocracyDroid,closed,2016-10-31 01:58:26,Scroll on Swipe down,"[Label(name=""enhancement"")]",0,
+fenimore/DemocracyDroid,closed,2016-09-16 23:53:12,"When switching fast between tabs, stories feed loads over and over","[Label(name=""bug"")]",1,
+fenimore/DemocracyDroid,closed,2016-09-16 23:53:26,listview won't all click after returning from item,"[Label(name=""bug"")]",1,"1. Click stream 
+2. Return with homeasup
+3. Reclick same episode
+"
+fenimore/DemocracyDroid,closed,2016-09-17 00:51:41,Videoview playback restarts on screen lock,[],0,"see this question:
+http://stackoverflow.com/questions/18262749/videoview-restarts-playback-on-lock-screen
+"
+fenimore/DemocracyDroid,closed,2016-09-01 00:01:51,"Android 6, video seeks doesn't work as expected","[Label(name=""bug"")]",1,"After I updated to 6, when I rotate device, it restarts video... mhmmm.
+"
+fenimore/DemocracyDroid,closed,2016-09-16 22:09:35,Download Tab Padding is Offset,"[Label(name=""bug"")]",1,
+fenimore/DemocracyDroid,closed,2016-09-17 00:17:16,Video View Toolbar Toggles,"[Label(name=""enhancement""), Label(name=""help wanted"")]",0,"Videoview toolbar should fade out with the Media Controller instead of toggling. See stackoverflow:
+http://stackoverflow.com/questions/38909770/hide-and-show-toolbar-on-mediacontroller-show-and-hide
+"
+fenimore/DemocracyDroid,closed,2016-08-23 23:09:23,Live stream link changed,"[Label(name=""bug"")]",1,"So version 2.3.1 should fix this, but I keep missing the opportunity to test the fix.
+"
+fenimore/DemocracyDroid,closed,2016-08-13 20:11:53,Audio link is offset,"[Label(name=""bug"")]",1,"This is a mess...
+"
+fenimore/DemocracyDroid,closed,2016-08-10 14:39:41,IndexOutOfBounds error,"[Label(name=""bug"")]",1,"Seemingly random crashes happen. I think it has something to do with the way tabs positions are sent around. Hard to reproduce, but it';ll crash if you mess around enough (switching between tabs frantically).
+"
+fenimore/DemocracyDroid,closed,2016-08-01 02:25:56,Download of non-daily episode won't show up in download feed,"[Label(name=""bug"")]",1,"This is potentially really bad. How should I fix it?
+"
+fenimore/DemocracyDroid,closed,2016-09-16 23:53:19,listview duplicates on tab switch,"[Label(name=""help wanted"")]",0,
+fenimore/DemocracyDroid,closed,2016-08-10 14:39:07,todays broadcast shows before available,"[Label(name=""bug"")]",1,
+fenimore/DemocracyDroid,closed,2016-04-25 01:12:18,Refresh,[],0,"adds to listview infinitely.... yikes, resets when the screen changes orientation
+"
+fenimore/DemocracyDroid,closed,2016-04-11 13:21:29,Audio Downloads,"[Label(name=""bug"")]",1,"Audio downloads don't work... ???
+"
+fenimore/DemocracyDroid,closed,2015-05-08 20:53:53,volume crashes in vlc,[],0,"When using VLC player, if I change the volume on my device, the application crashes. This could be (1) my device (2) my version vlc (3) both of above
+The fix is to use the internal VLC volume control.
+"
