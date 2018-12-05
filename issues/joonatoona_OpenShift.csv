@@ -1,0 +1,12 @@
+repository,state,closed_at,title,label,is_bug,body
+joonatoona/OpenShift,closed,2018-03-18 22:50:07,Create README.md,[],0,"Hi,
+
+This small and useless PR adds two buttons to get your app on F-Droid and Google Play 👍 "
+joonatoona/OpenShift,closed,2017-06-28 15:45:57,"OpenShift is a registered trademark of Red Hat, Inc",[],0,"https://trademarks.justia.com/852/93/openshift-85293696.html
+
+https://github.com/openshift/
+It's probably best if you pick another name. "
+joonatoona/OpenShift,closed,2017-06-28 15:03:45,Project name clash,[],0,"When you create a new project, if you want to have visibility and avoid trademark issues, then you'd better check if the name is already used.
+
+Please see https://en.wikipedia.org/wiki/OpenShift
+"

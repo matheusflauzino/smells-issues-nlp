@@ -1,0 +1,2 @@
+"Problem","Package","File","Priority","Line","Description","Rule set","Rule"
+"1","ca.cmetcalfe.locationshare","/home/matheus/smells-issues-nlp/repositories/pR0Ps_LocationShare/app/src/main/java/ca/cmetcalfe/locationshare/MainActivity.java","3","37","This class has too many methods, consider refactoring it.","Design","TooManyMethods"

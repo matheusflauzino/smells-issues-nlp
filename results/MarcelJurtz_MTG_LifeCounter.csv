@@ -1,0 +1,5 @@
+"Problem","Package","File","Priority","Line","Description","Rule set","Rule"
+"1","com.marceljurtz.lifecounter.Game","/home/matheus/smells-issues-nlp/repositories/MarcelJurtz_MTG_LifeCounter/app/src/main/java/com/marceljurtz/lifecounter/Game/GameActivity.java","3","25","This class has too many methods, consider refactoring it.","Design","TooManyMethods"
+"2","com.marceljurtz.lifecounter.Game","/home/matheus/smells-issues-nlp/repositories/MarcelJurtz_MTG_LifeCounter/app/src/main/java/com/marceljurtz/lifecounter/Game/GameActivity.java","3","80","Avoid really long methods.","Design","ExcessiveMethodLength"
+"1","com.marceljurtz.lifecounter.Game","/home/matheus/smells-issues-nlp/repositories/MarcelJurtz_MTG_LifeCounter/app/src/main/java/com/marceljurtz/lifecounter/Game/GamePresenter.java","3","12","This class has too many methods, consider refactoring it.","Design","TooManyMethods"
+"1","com.marceljurtz.lifecounter.Settings","/home/matheus/smells-issues-nlp/repositories/MarcelJurtz_MTG_LifeCounter/app/src/main/java/com/marceljurtz/lifecounter/Settings/SettingsPresenter.java","3","10","This class has too many methods, consider refactoring it.","Design","TooManyMethods"

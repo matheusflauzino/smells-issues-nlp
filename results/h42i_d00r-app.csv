@@ -1,0 +1,3 @@
+"Problem","Package","File","Priority","Line","Description","Rule set","Rule"
+"1","com.hasi.d00r","/home/matheus/smells-issues-nlp/repositories/h42i_d00r-app/app/src/main/java/com/hasi/d00r/GenerateNewIdentityTask.java","3","28","The class 'GenerateNewIdentityTask' is suspected to be a Data Class (WOC=0.000%, NOPA=6, NOAM=1, WMC=1)","Design","DataClass"
+"1","com.hasi.d00r","/home/matheus/smells-issues-nlp/repositories/h42i_d00r-app/app/src/main/java/com/hasi/d00r/RegisterIdentityTask.java","3","27","The class 'RegisterIdentityTask' is suspected to be a Data Class (WOC=0.000%, NOPA=5, NOAM=1, WMC=1)","Design","DataClass"

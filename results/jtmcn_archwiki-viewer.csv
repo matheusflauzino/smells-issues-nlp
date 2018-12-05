@@ -1,0 +1,2 @@
+"Problem","Package","File","Priority","Line","Description","Rule set","Rule"
+"1","com.jtmcn.archwiki.viewer.data","/home/matheus/smells-issues-nlp/repositories/jtmcn_archwiki-viewer/app/src/main/java/com/jtmcn/archwiki/viewer/data/WikiPage.java","3","6","The class 'WikiPage' is suspected to be a Data Class (WOC=0.000%, NOPA=0, NOAM=5, WMC=6)","Design","DataClass"

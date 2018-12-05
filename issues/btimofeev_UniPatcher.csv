@@ -1,0 +1,15 @@
+repository,state,closed_at,title,label,is_bug,body
+btimofeev/UniPatcher,closed,2017-09-26 09:23:24,General rework,[],0,
+btimofeev/UniPatcher,closed,2017-08-31 05:48:05,Specifying free,[],0,
+btimofeev/UniPatcher,closed,2017-08-31 05:41:32,"""Gratis"", and new Genesis checksum text",[],0,"Making the distinction between free as in free software, and what is not, one could also go with ""freeware"" but it has fallen out of fashion i think."
+btimofeev/UniPatcher,closed,2017-08-31 05:38:33,Spelling: July,[],0,"Presumably this is not meant to be ""June"""
+btimofeev/UniPatcher,open,,Select SD Card for Android 5.0 and up,"[Label(name=""enhancement"")]",0,Should support select external SD Card for android 5.0 and up
+btimofeev/UniPatcher,closed,2017-07-07 09:03:47,Clarification of intent,[],0,
+btimofeev/UniPatcher,open,,Support simple expand ROM,"[Label(name=""enhancement"")]",0,Allow the user to expand or trim the ROM by entering the required size.
+btimofeev/UniPatcher,closed,2017-03-21 13:06:47,Support creating Xdelta3 patches,"[Label(name=""enhancement"")]",0,
+btimofeev/UniPatcher,closed,2017-03-22 15:48:48,UniPatcher deletes directory,"[Label(name=""bug"")]",1,"If the output file name is empty (after renaming), the program deletes the parent directory."
+btimofeev/UniPatcher,closed,2017-05-31 17:29:38,F-Droid package,"[Label(name=""enhancement"")]",0,
+btimofeev/UniPatcher,open,,"Support extender script ""ROM Expander Pro.txt""","[Label(name=""enhancement"")]",0,Description of the file format can be read from this [link](https://github.com/btimofeev/UniPatcher/wiki/ROM-Expander-Pro)
+btimofeev/UniPatcher,open,,Support XPC patches,"[Label(name=""enhancement"")]",0,
+btimofeev/UniPatcher,open,,Support NMP format,"[Label(name=""enhancement"")]",0,
+btimofeev/UniPatcher,open,,Support XDelta1 patches,"[Label(name=""enhancement"")]",0,

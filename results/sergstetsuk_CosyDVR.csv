@@ -1,0 +1,4 @@
+"Problem","Package","File","Priority","Line","Description","Rule set","Rule"
+"1","es.esy.CosyDVR","/home/matheus/smells-issues-nlp/repositories/sergstetsuk_CosyDVR/src/es/esy/CosyDVR/BackgroundVideoRecorder.java","3","56","This class has too many methods, consider refactoring it.","Design","TooManyMethods"
+"2","es.esy.CosyDVR","/home/matheus/smells-issues-nlp/repositories/sergstetsuk_CosyDVR/src/es/esy/CosyDVR/BackgroundVideoRecorder.java","3","139","Avoid really long methods.","Design","ExcessiveMethodLength"
+"3","es.esy.CosyDVR","/home/matheus/smells-issues-nlp/repositories/sergstetsuk_CosyDVR/src/es/esy/CosyDVR/BackgroundVideoRecorder.java","3","474","Avoid really long methods.","Design","ExcessiveMethodLength"

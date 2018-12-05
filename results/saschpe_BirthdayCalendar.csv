@@ -1,0 +1,5 @@
+"Problem","Package","File","Priority","Line","Description","Rule set","Rule"
+"1","saschpe.birthdays.app","/home/matheus/smells-issues-nlp/repositories/saschpe_BirthdayCalendar/mobile/src/main/java/saschpe/birthdays/app/SourcesFragment.java","3","51","This class has too many methods, consider refactoring it.","Design","TooManyMethods"
+"1","saschpe.birthdays.model","/home/matheus/smells-issues-nlp/repositories/saschpe_BirthdayCalendar/mobile/src/main/java/saschpe/birthdays/model/AccountModel.java","3","31","The class 'AccountModel' is suspected to be a Data Class (WOC=16.667%, NOPA=0, NOAM=4, WMC=8)","Design","DataClass"
+"1","saschpe.birthdays.service","/home/matheus/smells-issues-nlp/repositories/saschpe_BirthdayCalendar/mobile/src/main/java/saschpe/birthdays/service/CalendarSyncService.java","3","104","Avoid really long methods.","Design","ExcessiveMethodLength"
+"2","saschpe.birthdays.service","/home/matheus/smells-issues-nlp/repositories/saschpe_BirthdayCalendar/mobile/src/main/java/saschpe/birthdays/service/CalendarSyncService.java","3","300","Avoid really long methods.","Design","ExcessiveMethodLength"

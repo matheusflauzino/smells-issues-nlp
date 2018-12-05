@@ -1,0 +1,2 @@
+"Problem","Package","File","Priority","Line","Description","Rule set","Rule"
+"1","com.itds.sms.ping","/home/matheus/smells-issues-nlp/repositories/itds-consulting_android-silent-ping-sms/app/src/main/java/com/itds/sms/ping/MainActivity.java","3","44","This class has too many methods, consider refactoring it.","Design","TooManyMethods"

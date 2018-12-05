@@ -1,0 +1,5 @@
+"Problem","Package","File","Priority","Line","Description","Rule set","Rule"
+"1","ca.rmen.nounours.android.common.nounours","/home/matheus/smells-issues-nlp/repositories/caarmen_nounours-android/common/src/main/java/ca/rmen/nounours/android/common/nounours/AndroidNounours.java","3","77","Avoid long parameter lists.","Design","ExcessiveParameterList"
+"1","android.support.v4.content","/home/matheus/smells-issues-nlp/repositories/caarmen_nounours-android/handheld/src/main/java/android/support/v4/content/FileProvider.java","3","323","This class has too many methods, consider refactoring it.","Design","TooManyMethods"
+"1","ca.rmen.nounours.android.handheld","/home/matheus/smells-issues-nlp/repositories/caarmen_nounours-android/handheld/src/main/java/ca/rmen/nounours/android/handheld/MainActivity.java","3","77","This class has too many methods, consider refactoring it.","Design","TooManyMethods"
+"1","com.external.nbadal","/home/matheus/smells-issues-nlp/repositories/caarmen_nounours-android/handheld/src/main/java/com/external/nbadal/AnimatedGifEncoder.java","3","17","This class has too many methods, consider refactoring it.","Design","TooManyMethods"

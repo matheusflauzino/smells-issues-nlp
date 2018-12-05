@@ -1,0 +1,5 @@
+"Problem","Package","File","Priority","Line","Description","Rule set","Rule"
+"1","com.quaap.fishberserker","/home/matheus/smells-issues-nlp/repositories/quaap_SeafoodBerserker/app/src/main/java/com/quaap/fishberserker/PlayActivity.java","3","18","This class has too many methods, consider refactoring it.","Design","TooManyMethods"
+"2","com.quaap.fishberserker","/home/matheus/smells-issues-nlp/repositories/quaap_SeafoodBerserker/app/src/main/java/com/quaap/fishberserker/PlayActivity.java","3","47","Avoid really long methods.","Design","ExcessiveMethodLength"
+"1","com.quaap.fishberserker.component","/home/matheus/smells-issues-nlp/repositories/quaap_SeafoodBerserker/app/src/main/java/com/quaap/fishberserker/component/SoundEffects.java","3","39","This class has too many methods, consider refactoring it.","Design","TooManyMethods"
+"1","com.quaap.fishberserker.game","/home/matheus/smells-issues-nlp/repositories/quaap_SeafoodBerserker/app/src/main/java/com/quaap/fishberserker/game/MainFishView.java","3","43","This class has too many methods, consider refactoring it.","Design","TooManyMethods"

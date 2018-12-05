@@ -1,0 +1,7 @@
+"Problem","Package","File","Priority","Line","Description","Rule set","Rule"
+"1","me.sheimi.android.activities","/home/matheus/smells-issues-nlp/repositories/maks_MGit/app/src/main/java/me/sheimi/android/activities/SheimiFragmentActivity.java","3","33","This class has too many methods, consider refactoring it.","Design","TooManyMethods"
+"1","me.sheimi.sgit.activities","/home/matheus/smells-issues-nlp/repositories/maks_MGit/app/src/main/java/me/sheimi/sgit/activities/RepoDetailActivity.java","3","36","This class has too many methods, consider refactoring it.","Design","TooManyMethods"
+"1","me.sheimi.sgit.adapters","/home/matheus/smells-issues-nlp/repositories/maks_MGit/app/src/main/java/me/sheimi/sgit/adapters/RepoListAdapter.java","3","44","This class has too many methods, consider refactoring it.","Design","TooManyMethods"
+"1","me.sheimi.sgit.database","/home/matheus/smells-issues-nlp/repositories/maks_MGit/app/src/main/java/me/sheimi/sgit/database/RepoDbManager.java","3","18","This class has too many methods, consider refactoring it.","Design","TooManyMethods"
+"1","me.sheimi.sgit.database.models","/home/matheus/smells-issues-nlp/repositories/maks_MGit/app/src/main/java/me/sheimi/sgit/database/models/Repo.java","3","43","This class has too many methods, consider refactoring it.","Design","TooManyMethods"
+"1","me.sheimi.sgit.fragments","/home/matheus/smells-issues-nlp/repositories/maks_MGit/app/src/main/java/me/sheimi/sgit/fragments/CommitsFragment.java","3","39","This class has too many methods, consider refactoring it.","Design","TooManyMethods"

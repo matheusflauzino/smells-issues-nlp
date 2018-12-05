@@ -1,0 +1,2 @@
+"Problem","Package","File","Priority","Line","Description","Rule set","Rule"
+"1","com.dosse.chromiumautoupdater","/home/matheus/smells-issues-nlp/repositories/adolfintel_chromiumUpdater/ChromiumAutoUpdater/app/src/main/java/com/dosse/chromiumautoupdater/ChromiumUpdater.java","3","117","Avoid really long methods.","Design","ExcessiveMethodLength"

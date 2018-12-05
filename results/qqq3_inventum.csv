@@ -1,0 +1,6 @@
+"Problem","Package","File","Priority","Line","Description","Rule set","Rule"
+"1","org.asdtm.fas.activity","/home/matheus/smells-issues-nlp/repositories/qqq3_inventum/app/src/main/java/org/asdtm/fas/activity/MovieDetailsActivity.java","3","52","This class has too many methods, consider refactoring it.","Design","TooManyMethods"
+"1","org.asdtm.fas.activity","/home/matheus/smells-issues-nlp/repositories/qqq3_inventum/app/src/main/java/org/asdtm/fas/activity/TvDetailsActivity.java","3","52","This class has too many methods, consider refactoring it.","Design","TooManyMethods"
+"1","org.asdtm.fas.fragment","/home/matheus/smells-issues-nlp/repositories/qqq3_inventum/app/src/main/java/org/asdtm/fas/fragment/DiscoverFragment.java","3","36","This class has too many methods, consider refactoring it.","Design","TooManyMethods"
+"1","org.asdtm.fas.fragment","/home/matheus/smells-issues-nlp/repositories/qqq3_inventum/app/src/main/java/org/asdtm/fas/fragment/MoviesFragment.java","3","36","This class has too many methods, consider refactoring it.","Design","TooManyMethods"
+"1","org.asdtm.fas.fragment","/home/matheus/smells-issues-nlp/repositories/qqq3_inventum/app/src/main/java/org/asdtm/fas/fragment/TvFragment.java","3","36","This class has too many methods, consider refactoring it.","Design","TooManyMethods"

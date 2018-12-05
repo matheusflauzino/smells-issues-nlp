@@ -1,0 +1,3 @@
+"Problem","Package","File","Priority","Line","Description","Rule set","Rule"
+"1","org.asdtm.goodweather","/home/matheus/smells-issues-nlp/repositories/qqq3_good-weather/app/src/main/java/org/asdtm/goodweather/MainActivity.java","3","55","This class has too many methods, consider refactoring it.","Design","TooManyMethods"
+"1","org.asdtm.goodweather.model","/home/matheus/smells-issues-nlp/repositories/qqq3_good-weather/app/src/main/java/org/asdtm/goodweather/model/WeatherForecast.java","3","5","The class 'WeatherForecast' is suspected to be a Data Class (WOC=0.000%, NOPA=0, NOAM=32, WMC=32)","Design","DataClass"

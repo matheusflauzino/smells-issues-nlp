@@ -1,0 +1,2 @@
+"Problem","Package","File","Priority","Line","Description","Rule set","Rule"
+"1","org.secuso.privacyfriendlydicegame","/home/matheus/smells-issues-nlp/repositories/SecUSo_privacy-friendly-dice-game/app/src/main/java/org/secuso/privacyfriendlydicegame/MainActivity.java","3","62","Avoid really long methods.","Design","ExcessiveMethodLength"

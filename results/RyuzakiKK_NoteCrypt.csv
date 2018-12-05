@@ -1,0 +1,4 @@
+"Problem","Package","File","Priority","Line","Description","Rule set","Rule"
+"1","com.notecrypt.ui","/home/matheus/smells-issues-nlp/repositories/RyuzakiKK_NoteCrypt/app/src/main/java/com/notecrypt/ui/MainActivity.java","3","46","This class has too many methods, consider refactoring it.","Design","TooManyMethods"
+"2","com.notecrypt.ui","/home/matheus/smells-issues-nlp/repositories/RyuzakiKK_NoteCrypt/app/src/main/java/com/notecrypt/ui/MainActivity.java","3","84","Avoid really long methods.","Design","ExcessiveMethodLength"
+"1","com.notecrypt.ui","/home/matheus/smells-issues-nlp/repositories/RyuzakiKK_NoteCrypt/app/src/main/java/com/notecrypt/ui/SelectDatabaseActivity.java","3","48","This class has too many methods, consider refactoring it.","Design","TooManyMethods"

@@ -1,0 +1,3 @@
+"Problem","Package","File","Priority","Line","Description","Rule set","Rule"
+"1","com.bmco.cratesiounofficial.activities","/home/matheus/smells-issues-nlp/repositories/TheUberCatman_crates-io-android/app/src/main/java/com/bmco/cratesiounofficial/activities/CrateActivity.java","3","90","Avoid really long methods.","Design","ExcessiveMethodLength"
+"1","com.bmco.cratesiounofficial.models","/home/matheus/smells-issues-nlp/repositories/TheUberCatman_crates-io-android/app/src/main/java/com/bmco/cratesiounofficial/models/Alert.java","3","7","The class 'Alert' is suspected to be a Data Class (WOC=0.000%, NOPA=0, NOAM=6, WMC=7)","Design","DataClass"

@@ -1,0 +1,31 @@
+repository,state,closed_at,title,label,is_bug,body
+guardianproject/ripple,open,,Updated de (German) translation,[],0,
+guardianproject/ripple,closed,2018-05-28 08:27:11,Fix resource directory name build error,[],0,"fixes #7 
+@eighthave sir, can you take a look this, please?"
+guardianproject/ripple,closed,2018-05-28 08:27:11,Can't build project because of broken locale code,[],0,"**Problem**
+Android Studio 3.1.2 doesn't recognize `values-zh-Hans` folder when building app and give me the error:
+```
+/Ripple/app/src/main/res/values-zh-Hans: Error: Invalid resource directory name
+```
+**Solution**
+Replace `values-zh-Hans` with `values-zh`.
+From my understanding of simplified / traditional Chinese language variations this is correct replacement.
+**More on the problem**
+This guy probably addressed issue the best
+https://gist.github.com/amake/0ac7724681ac1c178c6f95a5b09f03ce#new-locales-vs-old-locales-chinese
+
+I'll be happy to fix it in PR"
+guardianproject/ripple,closed,2018-05-28 08:29:57,Restrict app icons to the same dimensions,[],0,"Before:
+
+![device-2018-01-25-104834](https://user-images.githubusercontent.com/244947/35389186-e0658996-01bd-11e8-9bb5-9bddddf845f0.png)
+
+After:
+
+![device-2018-01-25-104926](https://user-images.githubusercontent.com/244947/35389189-e68733e2-01bd-11e8-8e91-03d8406449f3.png)
+"
+guardianproject/ripple,closed,2018-05-28 08:29:10,Update README.md,[],0,This PR adds usefull links in the README
+guardianproject/ripple,closed,2016-12-12 23:50:47,New fatures,[],0,Adds: Preference for disable countdown
+guardianproject/ripple,closed,2016-01-07 17:05:22,check reproducibility,[],0,
+guardianproject/ripple,closed,2016-01-06 13:21:34,bug fixes and cleanups,[],0,
+guardianproject/ripple,closed,2015-11-16 15:59:23,finalize first release,[],0,"let's release this thing!
+"

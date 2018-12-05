@@ -1,0 +1,340 @@
+repository,state,closed_at,title,label,is_bug,body
+richsmith/sexytopo,open,,No confirmation of save,[],0,"Clicking on the save icon, or even going through the file -> save does not confirm or give any indication of it saving (I lost a file, luckily only with a single leg, by closing sexytopo, no warning it was not saved, but this is expected as you swipe it off the screen. On restarting sexytopo, the file was empty. Probably closely related to https://github.com/richsmith/sexytopo/issues/4"
+richsmith/sexytopo,open,,Therion export xvi - No station or slays on x-section,[],0,"The lack of station is a real problem, as there is no way to identify where the cross section comes from.
+
+Adding a joining line would be really useful as well."
+richsmith/sexytopo,open,,Forcing slap to leg,[],0,"This overlaps a little with https://github.com/richsmith/sexytopo/issues/48
+
+When a splay if forced to a leg this is fine. However, usually what happens is you take 3 readings and they do not quiet work, maybe when shooting up an avon. When forcing the 3 shots, Sexytopo treats each one as a new leg and issues a new number. It would be nice to do it intelligently, as Pockettopo does. In Pockettopo you still have to force them individually but it numbers them all the same."
+richsmith/sexytopo,open,,Not working with more than one distoX,[],0,This might be me just not knowing how to do it. But if 2 distoX are paired it will not connect to the distoX. I had to unpair the other to get it to work
+richsmith/sexytopo,open,,Sketching colours,[],0,"It would be nice to have grey, I use it lots, mainly for overlapping walls"
+richsmith/sexytopo,open,,Sketching unresponsive,[],0,"Not actually worked this out yet, so this is really a place holder.
+
+At times when sketching the screen stops responding, sometimes is catches up and draws where the pen has been, at others it is not responding at all, going into move mode and back to drawing seems to help. (this may also happen when moving, but not sure) At times this made it very unusable, I've not seen this when testing at home. It started right at the beginning of the survey, so I doubt it is file size.
+
+At times I think this might be caused by dual touch setting off zoom mode, but at maximum zoom this is hard to tell. Water on the screen might be causing this. I will look into seeing if the galaxy tab can have touch sensitivity turned off so only the pen can be used!"
+richsmith/sexytopo,open,,Zoom level,[],0,"It would be nice to be able to zoom in a little more. I guess this might be device dependant, but the 1m squares are quite small at max zoom on my galaxy tab"
+richsmith/sexytopo,open,,Data order,[],0,"Currently the data order appears to be numerical, this is not useful, if stations are 1, 2, 3, 4 taken in that order then you return to 2 the data curretly appears as 1.1 but between station 1 and 2. It is far simpler for the surveyor to have the data appear at the end of the file. This means if legs are taken accidently they are easier to find and remove as it is just the last x stations. It is also important in post processing that the data is in order. If the distoX goes wrong or a team member changes and causes a problem (wearing metal watch or something) and the place where the happened, or at least a place where the survey was definitely correct can be identified, only data after that point has to be binned. The data order is not always the same as the cave passage order."
+richsmith/sexytopo,closed,2018-12-03 23:05:43,Cannot move data or leg from one station to another,[],0,"When a splay or a leg has been connected to a station there is no way to move it to another station, sexytopo complains that station already exists (which is does, as that is what you need to attach it to)"
+richsmith/sexytopo,open,,Active station - from sketch accidently selected,[],0,"It appears that tapping on a station in the sketch makes it the active station. This causes problems, if you draw near an previous station it can accidentally become the active station, and it appears that the data is not coming through, (this is related to data order, for which I will open another issue, https://github.com/richsmith/sexytopo/issues/68) and any data that does come through is now connected to the wrong station and cannot be moved to another station (Guess I need to open an issue for this as well https://github.com/richsmith/sexytopo/issues/67)
+If a comment is added this also becomes the active station, which is not always useful, I often add previous comments when the team are taking the next readings.
+I would suggest that making it an active station is a menu choice."
+richsmith/sexytopo,closed,2018-12-03 21:38:27,therion export - thconfig - no 3d file - will not run without scraps,[],0,"Currently the export commands try to produce a plan and extended elevation, however these are not compilable due to no information in the th2 files. Also the most useful export is a 3d file, therefore I would suggest that the thconfig look something like this, with the plan and extended commented out but ready
+
+
+source ""Bagpit.th""
+
+export model -o Bagpitth.3d
+
+#export map -proj plan -layout local -o ""Bagpit-plan.pdf""
+
+#export map -proj extended -layout local -o ""Bagpit-ee.pdf""
+
+"
+richsmith/sexytopo,closed,2018-12-03 21:34:04,therion export - th file - extend formating,[],0,"It appears that the extend format is missing spaces or maybe returns, I have not investigated further, just commented it out for now
+    extend start 1extend left 6extend left 1.1extend right 1.2extend left 1.3extend left 14"
+richsmith/sexytopo,closed,2018-12-03 21:31:59,therion export - th file - tape precision,[],0,It appear that the precision given on the tape is only to 2dp (centemetres) which is the same as the angle measurement. So the angles seem over precise and the tape a bit rounded. I would suggest that the tape should be at least 3dp if not 4 dp which is probably more in line with the angle readings
+richsmith/sexytopo,open,,Therion export -th file - improved readability,[],0,"Putting the three readings at the end of a line is better than loosing them.
+
+    2  3  4.39  263.56  5.29    ;  {from: 4.39 263.60 5.33, 4.39 263.57 5.29, 4.38 263.52 5.26}
+
+However what if you had only used 2 readings, or maybe more than 3. Also if there are 3 having them inline is very difficult to read, the legs could have been really slack and it is hard to tell. It also makes it difficult to scan through for comments, or comment on one of the 3 shots taken, which may be necessary when interference is suspected.. An easier format to read maybe
+
+    2  3  4.39  263.56  5.29 from 3 legs below
+#  2  3  4.39 263.60 5.33
+#  2  3  4.39 263.57 5.29
+#  2  3  4.38 263.52 5.26 
+"
+richsmith/sexytopo,open,,Therion export - th file has wrong comment character,[],0,"When 3 shots are combined to produce a leg a colon is used to comment out the end of the line, this should be a has.    
+
+1  2  3.89  11.98  -9.83    ;  {from: 3.90 191.98 9.88, 3.89 191.98 9.81, 3.89 191.97 9.81}
+should be
+1  2  3.89  11.98  -9.83    #  {from: 3.90 191.98 9.88, 3.89 191.98 9.81, 3.89 191.97 9.81}
+
+The alternative is to use ignore all on the end of the data line
+
+    data normal from to length compass clino ignoreall"
+richsmith/sexytopo,open,,Range for inclination,[],0,"When using a total station, the inclination goes from 0 for level to 90 for up, however it works on a 360 scale so 270 is down and 359.9.... is nearly level again. The acceptance of this type of reading would seem reasonable and would allow the principle of maintaining the readings as they are taken.
+"
+richsmith/sexytopo,closed,2018-12-03 22:26:19,No -neg on manual input,[],0,"On the Samsung galaxy tab 5, android 6.0.1
+When entering a leg or splay manually there is no way to get to the -ve key. there is the -ve symbol above the decimal, however holding it does not bring it up as an option. The keyborad that is brought up is the 10 numerals with the 2 keys to the left and right of the 0 being blank. to the left and right of the numerals are for keys, backspace, Next, ./- and clipboard/settings. The decimal is only available for Dist and Azimuth (which is fine) it changes to ./- for Inclination.
+On the tesco tablet a bigger keyboard is shown and this is not a problem"
+richsmith/sexytopo,open,,point multi-line text,[],0,"The point text entry dialog allows entry of multi-line text, new line being activated by using return key.  However the text is rendered as a single line.  Perhaps this is a bug?
+I would prefer multi-line text to render as multi-line text."
+richsmith/sexytopo,open,,File Rename,[],0,"I would like a > File > Rename menu option please.
+File > Save As... followed by > File > Delete is a work around, but it is very cumbersome when there is a whole set of files to rename.
+I guess consideration should be given to the Application behaviour with respect to linked files when a linked file is renamed, 'saved as' or deleted."
+richsmith/sexytopo,open,,Text in drawings is not exported to Therion format,[],0,"All data collected and created with ST should be exported.
+However text point entries in drawings is not exported to Therion format.  Not sure how this would be done, as I assume there is no direct equivalent in xvi format (I don't know).  The text entity could be parsed direct to a scrap (with point label) in the Therion th2 file, but this would be a bit messy.  Firstly all the labels would be in one arbitrary scrap, which may have no relation to the way the survey/drawing author wants to set things out, and it may confuse inexperienced Therion users.
+But mainly I don't like the 'raw survey notes in scrap' idea because it blurs the line between survey notes and subsequent drawing or data edits (which is one reason why I believe TopoDROID is flawed). The ideal would be to export the ST drawing text entities into xvi format and have it parse to Therion (and other export formats)."
+richsmith/sexytopo,closed,2018-11-05 22:46:18,DistoX view should be accessible mid-session,[],0,"The DistoX view with pairing and connection information is an inspired, informative and effective approach.
+However once the Table, Plan or Elevation views are activated by the user, there seems to be no way of going back to the DistoX view mid-session.  Taking a punt that connection issues will occur from time to time, it would seem reasonable that the user be able to view the bluetooth and connection status and log.  That would save all sorts of pain and uncertainty that i have experienced with both PocketTopo and TopoDROID."
+richsmith/sexytopo,open,,Inverse colour (should a dark environment be encountered),[],0,"Low priority enhancement
+A dark theme should be an option, to replace the current light theme.  And like Google maps, there should be the option for it to automatically switch, in response to changing light levels (although head lamps could make this problematic). "
+richsmith/sexytopo,closed,2018-09-14 19:11:54,Add logo/icon files,[],0,
+richsmith/sexytopo,closed,2018-09-22 23:15:27,Logo Design,[],0,"Hi @richsmith , I'm a graphic designer, after I review your project, I'm interested in your project and I want to contribute by creating a logo/icon for your project. What do you think?"
+richsmith/sexytopo,open,,thconfig - Therion Export,[],0,"The export pdf are useful, however, -layout local refers to a configuration layout called local, that does not exist in the file, so it will not run. Remove this part is the easiest solution, or add in a layout local  a suggestion would be
+
+layout local
+debug off
+map-header 0 0 off
+#symbol-hide group cave-centreline
+endlayout
+
+The export map should also probably be commented out, as they do not work until something is drawn. Usually the first thing a surveyor wants to check is the skeleton view, best created using
+
+export model -fmt survex -o NAMEth.3d
+
+I personally like adding th to the name of my files produced by Therion so I know which program has created them, so if a bug occurs I can work out where.
+"
+richsmith/sexytopo,open,,Automatically adding scraps -  Therion Export,[],0,"This is easy to do and a quick win to overcome a tedious manual task, especially for cross section that are not labelled, would need a screen to ask about naming conventions, using the topParser method would be a good start
+![namingconvensions](https://user-images.githubusercontent.com/13356509/40745201-c00bb046-644e-11e8-8c3b-4080d5f23d80.png)
+"
+richsmith/sexytopo,open,,Meta data screen,[],0,"Add who was surveying, doing what and what instruments used, auto date. What cave it is in, maybe country, and area Units of instruments, Calibration information about instruments, especially tapes, if a tape is 40cm shorter this is going to effect the drawing. Tapes can be longer and holding the end on is easier than the correct zero (Survex uses the number you read for a 0 length as its datum, so 20 would have the end missing -20 would be longer than it should be) This should also contain a declination box, that is only used to align the drawing screen. Personally I'm not familiar with this as mostly I survey in places where the compass north is very close to grid north, however I have heard that for surveying in places where it is more than 20 degrees out this is useful. (Bruce on the Therion mailing list would be a good person to ask)"
+richsmith/sexytopo,open,,Numbering and naming of Force New Station,[],0,"Personally I think that this would be better named as Convert to Leg.
+
+When this is done it reverts to the toporobot numbering system 1.1 not the next counting number which would seem more sensible"
+richsmith/sexytopo,open,,"Change to landscape, portrait or auto on main screen",[],0,"This might be superseded by being able to rotate the diagram, but yesterday I found it better to draw the extended elevation in landscape and the plan in portrait, there is plenty of room on the icon bar to add this, so no need to go through the menu."
+richsmith/sexytopo,open,,Comment out a leg or splay,[],0,"It can be useful to keep the data but not use it, so commenting out a leg or splay would be useful.
+
+I use it to store my calibration checks, a real enhancement would be to be able to identify them as calibration checks, currently I write this as a comment in Pockettopo, hence the request to add comments to splays"
+richsmith/sexytopo,open,,Comment on splay,[],0,"It would be useful to add a comment to a splay, ie to say this splay points to a bone, I'm not sure this can be done from the drawing menu, its just to difficult to select the splay."
+richsmith/sexytopo,closed,2018-09-09 18:04:27,Comment vanishing,[],0,"I wrote some comments on some stations, however, in the Therion export and now the original files the comments have been replaced by the 3 readings that where taken, it would appear to have overwritten the original comments."
+richsmith/sexytopo,closed,2018-08-27 16:42:45,Indicate which station a cross section is refering too,[],0,"Pockettopo uses a light grey line, this is very useful"
+richsmith/sexytopo,open,,Cross Section off screen in Therion export,[],0,"The cross section do not appear on the drawing canvas if they are too far off the edge, this can be solved by expanding the area by using numbers in the Drawing Area menu in Xtherion
+
+It would be useful if there was a line joining it to the correct station, also there are no stations in or splays in the import (maybe this should be split into more than one issue)"
+richsmith/sexytopo,open,,top fle import,[],0,"It would be very useful if a top import (and maybe an export) was available, lots of people converting from PocketTopo do not have a txt version as they where not needed.
+
+Here is the format 
+
+[PocketTopoFileFormat.txt](https://github.com/richsmith/sexytopo/files/2055326/PocketTopoFileFormat.txt)
+"
+richsmith/sexytopo,open,,Data loss,[],0,I have had three crashes that left me with no data. It's a great app but not stable enough!
+richsmith/sexytopo,closed,2018-02-04 21:46:48,Write the whole project in Javascript and webgl so it works under every OS,[],0,"It's not too late to add the ""script"" onto the technology, and it would avoid the competition with applications like topodroid.  Also it would be a lot easier for get other contributors because you don't have the heavyweight load of the android dev. environment and compiler.
+
+An example of Webgl for caves (which works best on the phone) is here:
+    http://goatchurchprime.github.io/groundwindow/groundwindow.html#caves/expoloser.js
+
+The recommendation is to make it work through the lower-level canvas than using the svg engine because it has much better performance even for very large numbers of elements.
+    http://smus.com/canvas-vs-svg-performance/
+
+Admittedly this is a recent development that makes it possible
+    https://developers.google.com/web/updates/2015/07/interact-with-ble-devices-on-the-web
+"
+richsmith/sexytopo,open,,Add background bitmap images,[],0,"You can put in a second survey (faded) in the background of the current survey.  
+
+How about allowing this to be a bitmap image as well?
+
+Then this would allow ST to work off a historical survey and continue onwards, or from a aerial photo surrounding a cave entrance (when starting off), or be used to trace up old surveys (and replace tunnel and therion).
+
+The bitmap should preferably be in geotiff format so that it comes with the correct scale and coordinate system.  This way it would have the convenience of qgis and there would be no need to develop user interface features for georeferencing.  
+
+"
+richsmith/sexytopo,open,,Needs line features,[],0,"Pitch lines with whiskers, fat lines for walls, dotted for estimated walls, invisible lines to surround areas of sand in the middle of a chamber.  (There are only 8 line types in tunnel)
+
+This can be done with a fixed set of colour conventions for the line types.  "
+richsmith/sexytopo,closed,2018-02-04 22:02:16,Render codewords written as a note as a symbol ,[],0,"Notes made of letters can be added to any place on the survey.
+
+Why not have special codewords that are plotted as symbols?  
+
+One way would allow for typing up unicode, where we know what the unicode symbol for a stal-curtain is.
+
+Or they could be codewords with a dot in front of them, eg: "".stream"" which gets rendered as a stream arrow.
+
+These should have the ability to set the rotation, eg encode in "".stream90"" for one that is at 90 degrees.
+
+But if you had a rotation attribute on the general note itself you could stick labels at different angles.
+
+This would be the prequel to inputting cave symbols through a more madphilfriendly interface."
+richsmith/sexytopo,open,,Two finger drag to pan,[],0,"The pinch to zoom works even in drawing mode, so why can't you use the two finger detection here to drag as well as zoom at the same time.  Google maps has it, so it can't be that awful an interface"
+richsmith/sexytopo,open,,Put all strings in xml,"[Label(name=""bug"")]",1,There's a few places in the code where I was lazy and put the strings directly into the source code. These need to be hunted down and put in the XML file. At some point we'll want to add translations and this is a prerequisite.
+richsmith/sexytopo,open,,Ability to rotate view,"[Label(name=""enhancement"")]",0,"This could be a longer term thing to add but would be nice to be able to rotate the view using e.g. two fingers rotation a la Google Maps.
+
+Adding this would also let us look into rotating the view automatically.
+
+## Dev Notes
+Would have to add gesture detection (we already handle pinch-to-zoom so something similar, hopefully). Would also have to modify the survey to view translation code and several random things like graph paper drawing. Could be a big job."
+richsmith/sexytopo,closed,2018-09-09 17:27:04,Fix splays on Extended Elevations,"[Label(name=""bug"")]",1,"Currently all splays get ""ironed out"" in the same direction as the centreline in an extended elevation. They probably shouldn't do. Figure out what they should do and modify the projection code."
+richsmith/sexytopo,open,,Sort out font/icon sizes on different resolutions,"[Label(name=""bug"")]",1,"Currently things like station labels are hard to read at different (very new) phone resolutions because they are set in pixels. These should scale more intelligently.
+
+## Dev Notes
+
+Look into setting the size of things using something other than pixels, or doing the scaling in code."
+richsmith/sexytopo,open,,Cross-section arrow,"[Label(name=""enhancement"")]",0,"Where a cross-section has been added it would be good to have an ""arrow"" (maybe a line with arrow or u-shaped line) drawn across a station at the angle of the cross-section with a direction."
+richsmith/sexytopo,open,,External Storage Access is not handled correctly,"[Label(name=""bug"")]",1,Program doesn't properly request permissions (in modern versions of Android) so always ends up falling back to internal storage.
+richsmith/sexytopo,open,,Calibration,"[Label(name=""enhancement"")]",0,Needs to be added.
+richsmith/sexytopo,open,,Correct cross-sections in Elevation mode,"[Label(name=""bug"")]",1,"Cross-sections in extended elevations are currently handled wrong (they're the same plane as the elevation, when they should be at right-angles). This should be corrected.
+
+## Dev Notes
+Cross-section creation should be delegated to PlanView and ElevationView  (Template Method strategy) so the X-section creation code can be split.
+Context Menu creation should be delegated to child view as well and EE menu should be modified so vertical and horizontal sections are available.
+Sketch data X-section format needs to be modified to include X-section type. May have saving implications."
+richsmith/sexytopo,closed,2018-09-09 17:27:30,Debug log,"[Label(name=""enhancement"")]",0,"It would be nice to have a log accessible somewhere from within SexyTopo where you could read log updates such as errors or basic program operations.
+
+## Dev Notes
+
+Some work has already been done on this, with a custom logging class. It needs to be checked that logging is actually going through this class, then some way of viewing this in the GUI needs to be coded up.
+
+GUI options are a separate Activity or a dialog box. Doesn't need to be fancy, just a list of time-stamped log entries.
+
+Need to check only the last e.g. 500 messages are stored."
+richsmith/sexytopo,open,,Audio feedback for station update,"[Label(name=""enhancement"")]",0,"It would be nice if Sexytopo gave some audio feedback on successful readings. By default this could be a soft tone for each splay and a more significant audio report on each new station. This should all be configurable in Settings (e.g. updates Never, Every Reading, or New Stations Only, and sounds Beep or Voice Feedback.)"
+richsmith/sexytopo,open,,Shake to turn on / off Disto connection,"[Label(name=""enhancement"")]",0,"Nice-to-have. Think this would be satisfying to use, plus easy to do.
+
+## Dev Notes
+This probably involves updating SexyTopoActivity to implement some sort of gesture dection."
+richsmith/sexytopo,closed,2017-11-15 22:47:25,Notes on survey stations,[],0,"It would be useful to be able to add notes to splays and legs. My main use of this is to label the first splay with what the station is so people can find it on a return trip. Bit can also say what the splay points to, or occasionally use it on a leg, it is a good place to comment about a QM.
+
+A real advancement would be to allow a photo tag to be added, then you could photo the station or the QM"
+richsmith/sexytopo,open,,Direction of Cross Sections,"[Label(name=""enhancement"")]",0,"Enhancement...
+
+Currently you have the cross section as perpendicular to the last leg. If it is a station with a single leg, that is the only real automatic option. However. when there are 2 legs, the most common definition and the one that gets it right most often is the perpendicular bisector of the legs. This is what pockettopo, Therion and I believe Survex all use, so it would make sense to use the same as the programme they are likely to be exported to.
+
+I really like the lines showing where the cross sections are, a real nifty feature would be to allow the user to set the direction. Guess some thought would have to be put into how the direction is exported, but I and others have used the direction you are facing in bracket after the station number, when doing this on paper surveying, so maybe this could be adapted"
+richsmith/sexytopo,open,,Reversing legs,[],0,"Hmm how do I set something as an enhancement?
+
+Currently you can reverse a leg from the plot screens, although this is a good place, it is often easier to do it in the data screen, would it be possible to add this as an option, please?
+
+Also instead of having to pick select mode, could a context menu not be brought up with a long click on move mode? This would make it far easier for the user."
+richsmith/sexytopo,closed,2017-11-03 00:03:09,Incorrect way to reverse a leg,[],0,"As stated previously a survey program should record what a survey actual does.
+
+So if a person reads a backwards leg it should be recorded as a backwards leg eg
+
+5    4    10.34    115    +11
+
+However Sexytopo is just changing the measurements and recording
+
+4   5    10.34    295    -11
+
+This causes 2 problems
+If you do not know where the station was read from, you might not be able to go back and check for thinks like magnetic interference or know that it was taken away from the interference, something like a anchor in the wall.
+It breaks clino calibration, lets take an extreme example, but one I have seen.
+
+On the above data, if the Clino was reading 4 degrees (something I have seen) under the true reading when the survey program corrects the reading it will then use
+
+5    4    10.34    115    +15 (+11+4)
+
+4   5    10.34    295    -7 ((-11+4)
+
+So the way SexyTopo records the data doubles the error for reversed legs when clino correction is applied. 
+
+There are probably lots of other reasons not to change the readings, but the above are the main 2.
+
+Oh and I have just noticed, it does not actually change the sign of the clino reading, so the reversal of a leg is actually wrong, so the elevation plot becomes wrong"
+richsmith/sexytopo,open,,Edit stations with the same name (or override to make into a leg),[],0,"When editing a station labelled as a - if you select the bottom one to try to make it into a number, to make it into a leg, the first in the list of - is edited, not the one highlighted or active station.
+One significance of this is that you cannot override a splay to become a leg. This can be important to show Avens etc.
+Sexytopo 1.0.11"
+richsmith/sexytopo,closed,2018-02-12 00:17:38,The 3 readings become  one with Therion (and probably other) Exports,[],0,"When 3 readings are taken and become a leg, if you try to edit them, it appears as a single reading, also on the export only 1 reading is exported.
+This should not happen, as it is also possible to take 1 reading and make it into a leg, it is important to be able to distinguish the difference, is it is likely that the multiple reading leg is less likely a blunder than the single reading, survex is in the process of taking account of this, I believe.
+It is also important as at times, say for avens, the user might have overriden a set of legs that did not become a leg automatically, these are more varied and by just having the export, this cannot be ascertained.
+The DistoX also records its rotation when taking a reading, this would be useful to be stored, as a leg with 3 readings with the same orientation is not as likely to be correct as a leg with at least 2 orientations. (I wonder if this should be a different issue)"
+richsmith/sexytopo,open,,Update README.md,[],0,"Hi,
+
+This small and useless PR adds two buttons to get the app on F-Droid and Google Play Store.
+
+I like your app, I'll use it at school, I think ;)"
+richsmith/sexytopo,closed,2017-01-30 23:54:05,App not starting in Nexus 5 with Android 6.0.1,[],0,"Either the app from Google Play or Fdroid when opening it, it doesn't work and show an error saying ""Unfortunately, Sexytopo has stopped"".
+
+My phone is a Nexus 5 from Google and runs Android 6.0.1.
+
+Best regards, 
+Alejandro"
+richsmith/sexytopo,closed,2016-09-04 14:35:48,Do not downgrade versioncode,[],0,"Recent code drop included a `app/build.gradle` with a lower versioncode than what was used before. This essentially prevents upgrades:
+
+```
+versionCode 1
+versionName ""1.0""
+```
+
+The last VC I am aware was 9. version 1.0.9.
+"
+richsmith/sexytopo,open,,Bluetooth pairing: Need to enter password everytime,[],0,"On every connection or data pull from device. 
+Password dialog for bluetooth pin is shown.
+
+Tesed on:
+**DistoX2 (V2.4)**
+
+**OnePlus X**
+- Bluetooth: v4.0, A2DP
+- OS    Android: v5.1.1 (Lollipop)
+
+**Samsung S7710 Galaxy Xcover2**
+- Bluetooth: v4.0, A2DP
+- OS    Android:  v4.1.2 (Jelly Bean)
+"
+richsmith/sexytopo,closed,2016-02-29 22:39:13,Data format seems to depend on locale,[],0,"Hello Rich, and many thanks for your efforts !
+I have an issue re-reading data from a saved file in sexytopo, and it seems to be related to the (french) local (if such a notion exists in Android)  of my phone, as it says (in a toast) ""Error:invalid double:2,50"". Please note the comma, as used in France for floating point (even called ""nombre à virgule"", virgule being comma in French) instead of the anglo-saxon dot.
+So it seems that the routine that save the data uses the locale and the one that reads them back just ignores the local.
+"
+richsmith/sexytopo,open,,Native File Format,[],0,"> Sexytopo doesn't really have a format per se for sketches - it just holds the data in memory as native Android objects and saves it as .json.
+
+With regard to SexyTopo's native save/load format:
+
+Currently survey data is persisted and read in an extremely basic Survex-compatible format. It uses the Survex .svx extension, and consists of absolutely nothing except the raw survey data in Survex default ""data normal"" format.
+
+```
+1   2   3.77    299.23  18.23
+2   -   5.00    0.00    0.00
+2   3   10.00   90.00   0.00
+3   4   15.00   180.00  45.00
+```
+
+I've got a local branch which implements magnetic declination calculation and correction. This requires persisting and loading the declination value associated with a given survey.
+
+Additionally, there will be more metadata associated with a given survey as the software grows. Examples include the name of the cave, the survey date, perhaps the survey team, etc.
+
+I have implemented a slightly more thorough Survex export/import based upon the following format:
+
+```
+*title TestSurvey
+*date 2016.01.21
+*declination 14.48 degrees
+
+1   2   3.77    299.23  18.23
+2   -   5.00    0.00    0.00
+2   3   10.00   90.00   0.00
+3   4   15.00   180.00  45.00
+```
+
+The parser makes it easy to add support for new Survex commands as features warrant them.
+
+The real question, however, is whether a subset of the Survex format is _desired_ as the native SexyTopo format, or whether a SexyTopo-specific format is preferred. My opinion is that the world doesn't need Yet Another Cave Survey Format, and I do like the Survex format (as well as the similar but changed-for-absolutely-no-reason Therion centerline version) but the decision isn't mine to make.
+"
+richsmith/sexytopo,closed,2016-01-24 14:21:39,Minor Tweaks,[],0,"This PR is a handfull of tiny tweaks that I made while bringing up a clean development environment (Android Studio on Mac OS X) and deploying to both hardware and the Android emulator.
+"
+richsmith/sexytopo,closed,2016-03-15 22:01:22,Backsight Shot Promotion,[],0,"This is a simple feature that PocketTopo still doesn't have yet. Similar to the promotion of three duplicate splays as a named shot, this PR recognizes a foresight / backsight pair and promotes it to a named shot as well. Compared to a triple forward shot, a foresight / backsight pair is much more useful at detecting magnetic anomalies (though the currently hard-coded 1.0° azm requirement is quite strict for those of us surveying in basalt rather than limestone).
+
+A few new helper functions were given public visibility so they could be unit tested; I can change this to package visibility if I may move the unit test classes to a more specific package than `tests`.
+"
+richsmith/sexytopo,open,,SVG Sketch Export,[],0,"I've started a feature branch for adding SVG sketch export. Ideally this will allow direct vector export at map-scale, layer compatible with Adobe Illustrator and Inkscape, with appropriate metadata so that Walls and Compass can roundtrip morph them along with loop closure.
+
+If you're willing to consider accepting this feature, I'd like to use this ticket for discussing further design and implementation.
+
+Initial working but ""not ready for primetime"" branch is at: https://github.com/riggsd/sexytopo/tree/svg-export
+"
+richsmith/sexytopo,closed,2016-01-19 22:22:42,Compass export,[],0,"This PR exports a Fountainware Compass .DAT survey file from the File->Export menu.
+
+Compass support could be improved if the exporter had access to some additional metadata, including: date of the survey, cave name (as opposed to survey name), magnetic declination, per-survey comment, survey team, per-shot comment.
+
+I did not try to define a common Java Interface for ""survey exporters"", but this would make for a better design once more formats are supported.
+
+Compass .DAT file format specification: http://www.fountainware.com/compass/Documents/FileFormats/SurveyDataFormat.htm
+"
+richsmith/sexytopo,closed,2016-01-19 22:08:37,"Switch ""Declination"" to ""Azimuth""",[],0,"SexyTopo's UI currently uses the term ""declination"" to refer to refer to the magnetic compass measurement. The term ""declination"", however, is more correctly used to refer to a location's Magnetic North offset from True North. This ambiguous usage makes it difficult to add support for magnetic declination correction to the application.
+
+This PR replaces all incorrect usages of ""declination"" with ""azimuth"", so that there will be no confusion when magnetic declination correction is added in the future.
+
+Note that the internal API most frequently uses the term ""bearing"" to refer to compass measurement. PocketTopo now uses the term ""azimuth"" in its UI. And ""azimuth"" is the correct term for a 0 - 360-deg measurement, while ""bearing"" more correctly refers to quadrant + 0 - 90-deg measurement (eg. W70-deg) [see: https://engineering.purdue.edu/~asm215/topics/bearings.html]. If you like, I can replace all internal use of the term ""bearing"" with ""azimuth"" as well, but this PR currently maintains that usage.
+"
+richsmith/sexytopo,closed,2016-02-03 18:39:14,Missing root project,[],0,"It looks like you just pushed the ""app"" folder into the repo and not the root porject. You most likely have ../build.gradle and ../settings.gradle whcih should be published as well.
+"
+richsmith/sexytopo,closed,2018-11-05 22:36:37,Allow switchbacks in elevation,"[Label(name=""enhancement"")]",0,
+richsmith/sexytopo,open,,Should prompt to save when opening a new survey,"[Label(name=""bug"")]",1,"Needs to be some way of flagging a survey changed but not saved
+"
+richsmith/sexytopo,closed,2015-10-16 07:28:44,Add ability to sketch cross sections,"[Label(name=""enhancement"")]",0,"Probably quite involved :/
+"
+richsmith/sexytopo,open,,Don't dismiss manual entry dialog (from table view) if there are errors,"[Label(name=""bug"")]",1,"Instead highlight errors and allow the user to correct them
+"
+richsmith/sexytopo,closed,2015-10-16 07:27:39,Most recent leg should be highlighted in a colour,"[Label(name=""enhancement"")]",0,"This is a good idea from PocketTopo. It uses purple.
+"

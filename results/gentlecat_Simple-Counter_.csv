@@ -1,0 +1,4 @@
+"Problem","Package","File","Priority","Line","Description","Rule set","Rule"
+"1","me.tsukanov.counter.ui","/home/matheus/smells-issues-nlp/repositories/gentlecat_Simple-Counter_/src/main/java/me/tsukanov/counter/ui/CounterFragment.java","3","33","This class has too many methods, consider refactoring it.","Design","TooManyMethods"
+"1","me.tsukanov.counter.ui","/home/matheus/smells-issues-nlp/repositories/gentlecat_Simple-Counter_/src/main/java/me/tsukanov/counter/ui/MainActivity.java","3","22","This class has too many methods, consider refactoring it.","Design","TooManyMethods"
+"1","me.tsukanov.counter.ui","/home/matheus/smells-issues-nlp/repositories/gentlecat_Simple-Counter_/src/main/java/me/tsukanov/counter/ui/SettingsActivity.java","3","36","This class has too many methods, consider refactoring it.","Design","TooManyMethods"

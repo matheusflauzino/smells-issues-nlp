@@ -1,0 +1,7 @@
+"Problem","Package","File","Priority","Line","Description","Rule set","Rule"
+"1","com.mikifus.padland","/home/matheus/smells-issues-nlp/repositories/mikifus_padland/app/src/main/java/com/mikifus/padland/PadLandDataActivity.java","3","40","This class has too many methods, consider refactoring it.","Design","TooManyMethods"
+"2","com.mikifus.padland","/home/matheus/smells-issues-nlp/repositories/mikifus_padland/app/src/main/java/com/mikifus/padland/PadLandDataActivity.java","3","315","This class has too many methods, consider refactoring it.","Design","TooManyMethods"
+"1","com.mikifus.padland","/home/matheus/smells-issues-nlp/repositories/mikifus_padland/app/src/main/java/com/mikifus/padland/PadListActivity.java","3","59","This class has too many methods, consider refactoring it.","Design","TooManyMethods"
+"1","com.mikifus.padland","/home/matheus/smells-issues-nlp/repositories/mikifus_padland/app/src/main/java/com/mikifus/padland/PadViewActivity.java","3","58","This class has too many methods, consider refactoring it.","Design","TooManyMethods"
+"2","com.mikifus.padland","/home/matheus/smells-issues-nlp/repositories/mikifus_padland/app/src/main/java/com/mikifus/padland/PadViewActivity.java","3","369","Avoid really long methods.","Design","ExcessiveMethodLength"
+"1","com.mikifus.padland","/home/matheus/smells-issues-nlp/repositories/mikifus_padland/app/src/main/java/com/mikifus/padland/ServerListActivity.java","3","30","This class has too many methods, consider refactoring it.","Design","TooManyMethods"

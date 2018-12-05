@@ -1,0 +1,14 @@
+repository,state,closed_at,title,label,is_bug,body
+SecUSo/privacy-friendly-dice-game,closed,2017-10-16 13:09:13,French translation,[],0,Made with <3 via Stringlate
+SecUSo/privacy-friendly-dice-game,closed,2017-10-16 12:50:53,Add new dicing method,"[Label(name=""enhancement"")]",0,Change the dicing method to the one from Privacy Friendly Dicer
+SecUSo/privacy-friendly-dice-game,closed,2016-11-23 21:25:13,Tag and versionname mismatch,[],0,"1.1.2 has been tagged, but the gradle file still says 1.1.1 with versioncode 3. You should bump the VC, update the versionName and move the tag to the changing commit."
+SecUSo/privacy-friendly-dice-game,closed,2016-11-09 19:15:28,Added Japanese translation,[],0,Hello!
+SecUSo/privacy-friendly-dice-game,closed,2016-11-03 09:12:29,Add Design for Splash Screen,"[Label(name=""bug"")]",1,"s.a.
+"
+SecUSo/privacy-friendly-dice-game,closed,2016-10-24 20:16:27,Develop,[],0,
+SecUSo/privacy-friendly-dice-game,closed,2016-10-24 20:12:34,Back button,"[Label(name=""enhancement"")]",0,"Back button if the dice were rolled by mistake.
+"
+SecUSo/privacy-friendly-dice-game,closed,2016-10-24 20:12:54,Add additional button to remove all locks at once,"[Label(name=""enhancement"")]",0,"s.a.
+"
+SecUSo/privacy-friendly-dice-game,closed,2016-10-24 20:13:05,No dice should look in round 0,[],0,"If round counter is 0 it should not be possible to lock dice.
+"

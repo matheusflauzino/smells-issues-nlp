@@ -1,0 +1,949 @@
+repository,state,closed_at,title,label,is_bug,body
+micolous/metrodroid,open,,Fix potential crash due to reusing view of incorrect type.,[],0,"If a card has many subscriptions, it can happen that view are reused (convertView is non-null).
+If a BalanceView is reused as a SubscriptionView (or vice versa), this leads to a crash of the
+application as findById returns null for sub-views.
+
+When a card does not have many subscriptions, the bug is not triggered here, as the views are
+not reused.
+
+I used getTag()/setTag() to mark the views and check whether they are the correct type. An easier
+fix would be to always discard ""convertView"". You could also check for a unique view id with
+findById(), but IMHO this is more error-prone.
+
+
+Error I get when view is reused incorrectly:
+
+java.lang.NullPointerException: Attempt to invoke virtual method 'void android.widget.TextView.setVisibility(int)' on a null object reference
+        at au.id.micolous.metrodroid.fragment.CardBalanceFragment$BalancesAdapter.getSubscriptionView(CardBalanceFragment.java:158)
+        at au.id.micolous.metrodroid.fragment.CardBalanceFragment$BalancesAdapter.getView(CardBalanceFragment.java:97)
+        at android.widget.AbsListView.obtainView(AbsListView.java:2365)
+        at android.widget.ListView.makeAndAddView(ListView.java:2052)
+        at android.widget.ListView.fillDown(ListView.java:786)
+        at android.widget.ListView.fillGap(ListView.java:750)
+        at android.widget.AbsListView.trackMotionScroll(AbsListView.java:5225)
+        at android.widget.ListView.trackMotionScroll(ListView.java:1971)
+        at android.widget.AbsListView$FlingRunnable.run(AbsListView.java:4769)
+        at android.view.Choreographer$CallbackRecord.run(Choreographer.java:911)
+        at android.view.Choreographer.doCallbacks(Choreographer.java:723)
+        at android.view.Choreographer.doFrame(Choreographer.java:655)
+        at android.view.Choreographer$FrameDisplayEventReceiver.run(Choreographer.java:897)
+        at android.os.Handler.handleCallback(Handler.java:790)
+        at android.os.Handler.dispatchMessage(Handler.java:99)
+        at android.os.Looper.loop(Looper.java:164)
+        at android.app.ActivityThread.main(ActivityThread.java:6494)
+        at java.lang.reflect.Method.invoke(Native Method)
+        at com.android.internal.os.RuntimeInit$MethodAndArgsCaller.run(RuntimeInit.java:440)
+        at com.android.internal.os.ZygoteInit.main(ZygoteInit.java:807)
+"
+micolous/metrodroid,open,,Fix OVC credit retrieval.,[],0,"OVC inverts the sign bit, add a XOR to compensate
+
+Thanks to @sfeigl "
+micolous/metrodroid,closed,2018-12-02 19:08:04,Fix OVChipkaart credit,"[Label(name=""bug"")]",1,"The OVChipkaart credit amount was broken by e3f115afcf9c2e0990535303f376aef885eba972.
+
+This commit reverts the change."
+micolous/metrodroid,closed,2018-12-02 00:46:32,Add Oppo Find7 to whitelist - device is working here after whitelisting,[],0,"My Oppo Find 7 device (running LineageOS) is not working with the unpatched version as Metrodroid says that Mifare Classic support is not there.
+
+After whitelisting, my device can read cards without problems."
+micolous/metrodroid,closed,2018-12-02 00:48:02,ricaricami: Add birth date.,[],0,Thanks to @lambia
+micolous/metrodroid,open,,Big lint pass,[],0,
+micolous/metrodroid,open,,Move nfc-felica-lib to project proper,[],0,"nfc-felica-lib is treated pretty much like part of the project, so put it in project proper."
+micolous/metrodroid,closed,2018-11-24 09:49:30,Podorozhnik: Fix grouping of serial number digits,[],0,
+micolous/metrodroid,open,,Restructure ClassicCardTransitFactory to reuse EarlyCheck for normal …,[],0,…check
+micolous/metrodroid,open,,Add a possibility to import MCT files directly in Metrodroid,[],0,
+micolous/metrodroid,closed,2018-11-17 00:16:08,Implement parser for Zolotaya Korona.,[],0,"Zolotaya Korona is MFC-based system used across Russia. I could get my hands
+on 2 cards from Iaroslavl and one from Krasnodar.
+"
+micolous/metrodroid,closed,2018-11-17 00:14:41,Add Litacka ID and change message for different kinds of unauthorized cards,[],0,
+micolous/metrodroid,closed,2018-11-17 00:14:41,Fix NPE when loading supported card list,[],0,
+micolous/metrodroid,closed,2018-11-17 00:14:41,Set of small and lint fixes,[],0,
+micolous/metrodroid,open,,felica: code to read Felica Lite,[],0,"Felica lite has following quirks:
+
+* No system code list
+* At least some variants respond to any system code
+* Attempting to read above 0x20 results in disconnected tag
+
+While on it, fix to keep already read data in case of disconnect"
+micolous/metrodroid,closed,2018-11-17 00:14:40,When trying alternate static keys dedup them.,[],0,"Many keys are repeated in static keysets, no need to try them a lot of times."
+micolous/metrodroid,closed,2018-11-11 05:38:35,Easycard couple of cleanups,[],0,
+micolous/metrodroid,closed,2018-11-17 10:35:11,Implement parser for Danish Rejsekort and Stockholm SLAccess,[],0,"It should be able to parse other cards following RKF standard which
+covers most of the cards in Norway, Sweden and Denmark but I have no other
+card to test"
+micolous/metrodroid,closed,2018-11-11 02:20:23,New function formatNumber,[],0,"Often it's needed to pretty-print the serial and every transit data solves it
+itself in an ugly way. Have a central function for this."
+micolous/metrodroid,closed,2018-11-11 01:07:15,SunCard from Orlando,[],0,It has only serial stored on it
+micolous/metrodroid,closed,2018-11-11 01:03:29,Small lint pass,[],0,
+micolous/metrodroid,closed,2018-11-04 15:11:25,Danish Rejsekort and RKF standard,[],0,
+micolous/metrodroid,closed,2018-11-11 00:31:36,Fix OOM when exporting large cardset,[],0,
+micolous/metrodroid,closed,2018-11-01 09:51:42,Fix mfcdump_convert,[],0,
+micolous/metrodroid,closed,2018-11-11 00:21:50,Implement parser for French vending machines (Selecta),[],0,"Well this is not a transit agency but the card is a typical stored value card
+like the ones used by transit agencies"
+micolous/metrodroid,closed,2018-10-30 10:39:43,Fix OOM when exporting large cardset,[],0,
+micolous/metrodroid,closed,2018-11-11 00:15:52,Switch TransitData to return list of trips and subscriptions rather than array,[],0,On top of factories branch.
+micolous/metrodroid,closed,2018-11-11 00:14:00,Read serial for AT HOP,[],0,On top of factories branch.
+micolous/metrodroid,closed,2018-11-11 00:11:57,Try well-known keys at the same time as loaded static keys,[],0,"It makes no sense to add well-known keys to user list, so pretend that
+they are always in the list.
+
+This speeds up scanning hugely as current code waits to bruteforce all
+keys."
+micolous/metrodroid,closed,2018-11-11 00:11:57,tmoney: Read DF,[],0,It is useful to read expiry date among other things
+micolous/metrodroid,closed,2018-11-11 00:10:44,Fix crash in farebotxml2files,[],0,
+micolous/metrodroid,closed,2018-11-11 00:10:16,Use common Intercode format in AdelaideSubscription,[],0,
+micolous/metrodroid,closed,2018-11-10 23:28:46,Switch TransitData to factory paradigm,[],0,This avoids having to put the same transit data into many lists and now you need to register it in just one place
+micolous/metrodroid,closed,2018-10-27 00:32:23,Tartu,[],0,
+micolous/metrodroid,closed,2018-10-27 00:26:16,Improve messaging for serial-only cards,[],0,"Add few pieces of info and an explanation of the situation
+
+This is on top of earlyclassic branch"
+micolous/metrodroid,closed,2018-10-25 09:28:51,One PR to rule them all: convenience PR merging all my current PRs,[],0,
+micolous/metrodroid,closed,2018-10-27 00:19:04,Early classic CardInfo,[],0,
+micolous/metrodroid,closed,2018-10-24 21:55:15,"Add Beijing, Wuhan Tong, City Union and TUnion",[],0,Based on sinpolib's app. Beijing is tested but other 3 unfortunately are not
+micolous/metrodroid,closed,2018-10-24 06:15:54,KMT: Adding Tambun station,[],0,
+micolous/metrodroid,closed,2018-10-24 19:19:28,Intercode fixes,[],0,
+micolous/metrodroid,closed,2018-10-24 06:35:10,Implement MetroQ parser,[],0,
+micolous/metrodroid,closed,2018-10-24 19:03:46,Implement parser for Clipper Ultralight,[],0,
+micolous/metrodroid,closed,2018-10-24 19:34:41,Show card type for fully locked desfire.,[],0,
+micolous/metrodroid,closed,2018-10-22 20:50:05,Add Civic center station,[],0,
+micolous/metrodroid,closed,2018-10-24 22:32:51,Implement Kiev Metro parser,[],0,
+micolous/metrodroid,closed,2018-10-26 23:38:39,Implement a parser for MetroCard (Adelaide),[],0,
+micolous/metrodroid,closed,2018-10-22 23:53:56,Change test package name,[],0,This way you don't lose entire DB when running tests
+micolous/metrodroid,closed,2018-10-24 06:29:50,intercode cleanup,[],0,
+micolous/metrodroid,closed,2018-10-22 23:54:32,sub: Add back the cost,[],0,
+micolous/metrodroid,closed,2018-10-22 23:54:51,Show Desfire manufacturing data in hex.,[],0,They all are either hex of BCD
+micolous/metrodroid,open,,MdST compression,"[Label(name=""backlog""), Label(name=""enhancement"")]",0,"## Description of the issue
+
+I'd reckon that not everyone would use every stop database, and some of them may never be loaded.
+
+I would still like everything to be offline, so I still need to ship these things.
+
+I think there is some value in compressing these.
+
+I've been running experiments on `mdst-compression-experiment`, after adding a new compressed field to `mdst-license-notice`.  In `mdst-license-notice`, I moved the attribution data into a field which is gzip-compressed. 
+
+Also in `mdst-license-notice`, I lazy-load the station index.
+
+It's probably better to compress entire sections of the file. MdST requires you to load the header block, then the entire index block if you want to reference stations by ID.
+
+Looking at a big database (`suica_rail.mdst`):
+
+Mode | header size | stations size | index size
+----|----|----|-----
+_uncompressed_ | 18710 | 254315 | 56307
+zlib (compressing each station record) | 9888 | 308086 | 24939
+brotli (compressing each station record) | 8576 | 277950 | 15694
+zlib (solid station records) | 9888 | 138167 | 24939
+brotli (solid station records) | 8576 | 106444 | 15694
+
+""compressing each station record"" is where I pushed a separate compressed block for each record in the file.  ""solid station records"" is where I concatenated all station records, then compressed the entire block.
+
+It should be possible to make changes to the format to seek within a solid station record list. It does mean a bunch of data will need to be decompressed for every lookup, unless the solid blocks can be split.
+
+At worst, just compressing the header and the index is generally a pretty good win."
+micolous/metrodroid,open,,Externalise/deduplicate card support matrix,"[Label(name=""backlog""), Label(name=""enhancement"")]",0,"## Description of the issue
+
+There are currently multiple sources of card lists in Metrodroid:
+
+- README.md: https://github.com/micolous/metrodroid/blob/master/README.md
+- The list on the website https://github.com/micolous/metrodroid/blob/master/docs/index.md
+- Google Play Store metadata in market.xml
+- The modified version of market.xml used for F-Droid metadata
+- `CardInfo`
+- Detailed card info matrix: https://github.com/micolous/metrodroid/wiki/checklists
+- Individual wiki pages
+
+I like the detailed card info matrix, because it has a lot of information about individual _available_ features, not just what we support.  There's also information which is off in individual wiki pages.
+
+I like the wiki because it contains information as the support for a card gradually improves.
+
+The website needs to be a little bit behind the rest, as that's what released on GPS / F-Droid.
+
+I think the wiki is out of scope.  But at least getting a source of truth for everything that's _not_ the wiki would be an improvement.
+
+Translation is still a challenge, but at least generating the source English text would help significantly.  Right now these get out of sync when I forget to action them.
+
+## What information needs to be collated
+
+- Card name
+- (optional) Name of agency
+- Agency's website
+- Location (country, city)
+- Card media type (MFC, MFD, MFU, ISO7816, FeliCa...)
+- Logo
+
+Maybe also get some screenshot metadata"
+micolous/metrodroid,closed,2018-10-06 03:27:27,Update ORCA stations,[],0,"This data came from a dump from @SoundTransit that provided the following:
+
+|#|Location|
+|-|-|
+|4211091569|Angle Lake|
+|150994945|Everett|
+|150994946|Edmonds|
+|150994947|King Street|
+|150994948|Tukwila|
+|150994949|Kent|
+|150994950|Auburn|
+|150994951|Sumner|
+|150994952|Puyallup|
+|150994953|Tacoma Dome|
+|151002625|Mukilteo|
+|151002626|Lakewood|
+|151009253|South Tacoma|
+
+Looking at King Street, if we convert `150994947` to hex, we get `9000003`.  I have no idea what the 9 means.  The existing data here shows `458755` for King Street, and converting that in hex is `70003`.  That one makes a little more sense, as `7` is the ID for Sound Transit, which is the agency responsible for the fare reader/writers at this station.
+This methodology falls apart for the last three stations so I've omitted them for now."
+micolous/metrodroid,closed,2018-10-06 03:27:27,Add Kitsap Transit to ORCA,[],0,Rode two buses and the fast ferry (using a [PFTP](https://www.flickr.com/photos/viriyincy/3561731244/)); all showed up as agency 5.
+micolous/metrodroid,closed,2018-10-06 03:22:08,Walgreens: Add 2 new IDs,[],0,"
+> edit(micolous): adds named Walgreens stores (per #149)"
+micolous/metrodroid,closed,2018-10-06 03:07:37,Kill dead function,[],0,
+micolous/metrodroid,closed,2018-10-06 03:31:24,Extract algorithm for merging taps to trips.,[],0,"Orca, Nextfare MFU, En1545 and Smartrider all have essentially the same algorithm.
+So extract it as a separate algorithm rather than repeating it.
+
+Nextfare MFC and Leap are not touched as they're pretty different
+OVC needs to be merged into en1545"
+micolous/metrodroid,closed,2018-10-06 03:07:36,Fix for OVC swallowing locked cards,[],0,
+micolous/metrodroid,closed,2018-10-06 03:09:48,Suica expiry,[],0,
+micolous/metrodroid,closed,2018-10-06 03:07:35,Fixes for classic card,[],0,Currently keys are completely broken due to provider using from component and other reasons. This is fix 
+micolous/metrodroid,closed,2018-10-06 03:07:35,Simplifications for handling signed values,[],0,
+micolous/metrodroid,closed,2018-10-06 03:04:02,Write a changelog and update supported card lists for 2.9.36,[],0,"## Description of the issue
+
+There are new cards in 2.9.36, probably should note in the README and in market.xml.
+
+Do this before #199 so that it has a chance to be translated.
+"
+micolous/metrodroid,open,,Add missing card images,[],0,"## Description of the issue
+
+Missing card images added in other pull requests:
+
+- [ ] Ventra (Chicago, IL, USA)
+- [x] Trimet (Portland, OR, USA)
+- [ ] Viva (Lisboa, Portugal)
+- [ ] Envibus (France)
+- [ ] Navigo (France)
+- [ ] OùRA (France)
+- [ ] TaM (France)
+- [ ] Transgironde (France)
+- [x] Mobib (Belgium)
+- [ ] RicaricaMi (Italy)
+- [ ] Adelaide Metro
+- [ ] Beijing
+- [ ] City Union
+- [ ] Pastel (France)
+- [ ] Kiev
+- [ ] MetroQ (Houston)
+- [ ] Selecta (France)
+- [ ] SunCard (Orlando)
+- [ ] Tartu Bus
+- [ ] Wuhan Tong
+"
+micolous/metrodroid,closed,2018-10-04 11:24:02,Distinguish Ventra from Compass (Vancouver),[],0,"Split out common code as NextfareUltralight.
+Fix few rough edges while on it"
+micolous/metrodroid,closed,2018-10-03 03:58:36,Distinguish Ventra from Compass (Vancouver),[],0,"Split out common code as NextfareUltralight.
+Fix few rough edges while on it"
+micolous/metrodroid,closed,2018-10-04 13:45:30,Trimet Hop parser,[],0,"Card has almost no data on it, so just parsing whatever is there."
+micolous/metrodroid,closed,2018-10-04 11:24:44,Fix 3 BART stations and tentatively add missing stations.,[],0,"I visited Castro Valley, San Leandro and Bay Fair and can confirm their IDs
+Add some deduced stations."
+micolous/metrodroid,closed,2018-10-04 11:44:42,En1545 cleanups and support for Lisboa Viva,[],0,
+micolous/metrodroid,closed,2018-09-29 11:16:49,ovc: Switch from sqlite to tsv,[],0,"sqlite is derived from tsv in opus-tools. Rather than parsing sqlite, just
+parse its source."
+micolous/metrodroid,closed,2018-09-29 07:26:29,VTA light rail map,[],0,
+micolous/metrodroid,closed,2018-09-29 11:14:50,Make vehicle and passengercount a separate parameter and Clipper improvements,[],0,
+micolous/metrodroid,closed,2018-09-28 08:03:55,Improve readability for raw tabs,[],0,"* Use monospace font
+* Break down hex in 4-byte groups
+* Break down hex in 16-byte lines
+* Add hex address
+* Break down record files on Desfire into individual records being careful
+  to include all bytes even on malformed files"
+micolous/metrodroid,closed,2018-09-28 07:42:05,charliecard fixes,[],0,"* fix epoch
+* fix expiry date
+* skip second serial if it's not there"
+micolous/metrodroid,closed,2018-09-28 08:03:54,leap: Remove redundant toString,[],0,
+micolous/metrodroid,closed,2018-09-28 08:04:27,bilhete: Remove redundant toString,[],0,
+micolous/metrodroid,closed,2018-09-25 09:41:52,Adding new known station code,[],0,"- Pondok Jati
+- Kramat
+- Gang Sentiong
+- Pasar Senen
+- Kemayoran
+- Rajawali
+- Kampung Bandan
+- Angke"
+micolous/metrodroid,closed,2018-09-23 02:44:41,Make CEPAS select match old code.,[],0,Fixes @sybond's bug
+micolous/metrodroid,closed,2018-10-01 06:45:29,Add card missing card images,"[Label(name=""enhancement"")]",0,"## Description of the issue
+
+New cards missing images in `master`:
+
+- [x] CharlieCard
+- [x] Go-to (Minneapolis)
+- [x] IstanbulKart
+- [x] Leap (Ireland)
+- [x] Strelka https://strelkacard.ru/
+"
+micolous/metrodroid,closed,2018-09-23 00:21:49,Treat all-FF MFC as blank,[],0,
+micolous/metrodroid,closed,2018-09-23 00:49:15,HSL fixes,[],0,
+micolous/metrodroid,closed,2018-09-23 00:49:15,Remove redundant hasTime override,[],0,
+micolous/metrodroid,closed,2018-09-30 12:45:19,Support importing and using static keys from MCT extended-std.key,[],0,
+micolous/metrodroid,closed,2018-09-23 00:49:15,Sort dropped stations and small improvement to EZ-Link database.,[],0,
+micolous/metrodroid,closed,2018-09-25 11:35:15,Support Minneapolis/St-Paul Go-to card,[],0,"* Disambiguate MSP and LAX cards.
+* Push mdst lookups to common nextfare code
+* Add convenience support for null STRs."
+micolous/metrodroid,closed,2018-09-23 00:49:14,mobibe_to_farebotxml: Set executable bit,[],0,
+micolous/metrodroid,closed,2018-09-23 00:54:11,Show metrodroid logo when card image is missing,[],0,
+micolous/metrodroid,closed,2018-09-23 00:54:11,Moscow card improvements,[],0,"* Detect Strelka and Troika+Strelka. Show Strelka serial. I don't have
+sufficient dumps to do more.
+* Add few validators to DB
+* Warn on unformatted Troikas.
+* Parse sector 4 (alternative magic)
+* Attach validator number correctly to last trip and not first tap."
+micolous/metrodroid,closed,2018-09-22 23:55:10,Implement serial number reading for IstanbulKart.,[],0,Reading other data needs keys. So it's basically like Myki.
+micolous/metrodroid,closed,2018-09-22 23:49:08,farebotxml_to_files: Fix handling of invalid sectors,[],0,
+micolous/metrodroid,closed,2018-09-23 00:54:51,Show file name for Calypso in raw view.,[],0,They're way nicer that numerical IDs.
+micolous/metrodroid,closed,2018-09-23 05:04:48,CharlieCard preview support.,[],0,
+micolous/metrodroid,closed,2018-09-23 13:03:43,Support TFI Leap (Dublin),[],0,
+micolous/metrodroid,closed,2018-09-23 05:11:41,Fixes for Bilhete Unico.,[],0,"* Remove BilheteSPCredit. It's just an int wrapper, just use int directly.
+* Get some trip info.
+* Have a proper check by checking value blocks and CRC-16
+
+I used vpereira's dumps. Unfortunately they're not annotated with serial,
+so I can't be sure about it but it matches general format seen on BU images"
+micolous/metrodroid,closed,2018-10-01 14:32:11,En1545 implementation and related cards,[],0,"* Implement Intercode. This gets us all French Calypso cards
+(Navigo, Gironde, ...) but without DBs
+* Databases for few Intercode networks
+* Implement Mobib
+* Improvements for Rav-Kav
+* Implement RicaricaMi (Milan)
+* Opus improvements"
+micolous/metrodroid,closed,2018-09-19 02:25:10,Cannot read CEPAS / EZ-Link,"[Label(name=""bug"")]",1,"## Description of the issue
+Using this [version](https://github.com/micolous/metrodroid/tree/9e31cf2821d8985feab27191cf6e4c6a391868f3), Metrodroid shows that the card is not yet supported.
+
+Please see attached [log](https://github.com/micolous/metrodroid/files/2368972/metrodroid_cepas.log)."
+micolous/metrodroid,open,,GP: Adding a key can cause OOM,"[Label(name=""bug"")]",1,"## Description of the issue
+
+```
+java.lang.OutOfMemoryError: 
+  at org.apache.commons.io.output.ByteArrayOutputStream.needNewBuffer (ByteArrayOutputStream.java:127)
+  at org.apache.commons.io.output.ByteArrayOutputStream.write (ByteArrayOutputStream.java:158)
+  at org.apache.commons.io.IOUtils.copyLarge (IOUtils.java:2147)
+  at org.apache.commons.io.IOUtils.copy (IOUtils.java:2102)
+  at org.apache.commons.io.IOUtils.copyLarge (IOUtils.java:2123)
+  at org.apache.commons.io.IOUtils.copy (IOUtils.java:2078)
+  at org.apache.commons.io.IOUtils.toByteArray (IOUtils.java:721)
+  at au.id.micolous.metrodroid.activity.AddKeyActivity.readKeyFile (AddKeyActivity.java:168)
+  at au.id.micolous.metrodroid.activity.AddKeyActivity.onCreate (AddKeyActivity.java:140)
+  at android.app.Activity.performCreate (Activity.java:7183)
+  at android.app.Instrumentation.callActivityOnCreate (Instrumentation.java:1220)
+  at android.app.ActivityThread.performLaunchActivity (ActivityThread.java:2908)
+  at android.app.ActivityThread.handleLaunchActivity (ActivityThread.java:3030)
+  at android.app.ActivityThread.-wrap11 (Unknown Source)
+  at android.app.ActivityThread$H.handleMessage (ActivityThread.java:1696)
+  at android.os.Handler.dispatchMessage (Handler.java:105)
+  at android.os.Looper.loop (Looper.java:164)
+  at android.app.ActivityThread.main (ActivityThread.java:6938)
+  at java.lang.reflect.Method.invoke (Native Method)
+  at com.android.internal.os.Zygote$MethodAndArgsCaller.run (Zygote.java:327)
+  at com.android.internal.os.ZygoteInit.main (ZygoteInit.java:1374)
+```
+
+Only reported on 2.9.34.
+"
+micolous/metrodroid,closed,2018-09-09 12:26:27,Suica improvements.,[],0,"* Pull time from tap log.
+* Pass human readable ID to STR.
+* Remove bunch of fields used only in constructor in SuicaTrip"
+micolous/metrodroid,closed,2018-09-09 10:15:19, Merge getAgencyName and getShortAgencyName.,[],0,It's based on cardinfo
+micolous/metrodroid,closed,2018-09-09 10:14:18, Move CardInfo to relevant cards ,[],0, It's on top of CEPAS branch for dependency purposes
+micolous/metrodroid,closed,2018-09-09 12:38:40,Revamp raw fragment,[],0,It's on top of ezlink branch for dependency reasons
+micolous/metrodroid,closed,2018-09-05 12:32:20,Fix Orca DB and tests,[],0,
+micolous/metrodroid,closed,2018-09-03 13:08:15,Merge getAgencyName and getShortAgencyName,[],0,"Those functions are almost always either the same or just pass different
+value to stationTableReader.
+
+On top of cardinfo branch."
+micolous/metrodroid,closed,2018-09-09 09:59:22,Change CEPAS to ISO7816 format,[],0,"Notes:
+* We need to use implicit app selection as EZ-Link has no standard AID
+* Old code did half of the parsing in reading. New code just passes on
+raw data and let transit code do the real parsing.
+* Old code is stripped to the bare minimum needed to read old dumps and moved
+to compat directories.
+* Commands converted to ISO7816 style.
+* New code also reads some files. The contents is not parsed yet. I don't
+  know if it's of any use."
+micolous/metrodroid,closed,2018-09-09 11:03:17,KMT stations data update,[],0,
+micolous/metrodroid,closed,2018-09-02 05:08:16,Add `Cikarang` and `Bekasi Timur` stations,[],0,
+micolous/metrodroid,open,,Switch suica from sqlite to csv and fix Mita station,"[Label(name=""backlog"")]",0,
+micolous/metrodroid,closed,2018-09-02 01:05:14,Add missing os.close(),[],0,Without it exporting a single card to google drive results in zero-sized file.
+micolous/metrodroid,closed,2018-09-02 01:08:03,Fix crash when opening map on Suica,[],0,
+micolous/metrodroid,closed,2018-08-30 13:35:06,Fix crash triggered by train icon,[],0,
+micolous/metrodroid,closed,2018-08-29 12:53:43,Ezlink small fixes,[],0,EZ-Link code is in a serious bad shape but let's only go low-hanging fruits.
+micolous/metrodroid,closed,2018-08-29 11:16:13,Fix crash on pre-lollipop android,[],0,Farebot theme creates unescapable crash under Kitkat or earlier. Fix it
+micolous/metrodroid,closed,2018-08-30 11:28:04,Update KMT's station data & support 7 digit amount,[],0,"Changes:
+
+1. Add latitude and longitude data
+1. Add new station data (`Sudirman - 0x48`)
+1. Short data based on `reader_id`  "
+micolous/metrodroid,open,,clipper: investigate agency IDs for Walgreens and other top-up locations,"[Label(name=""help wanted"")]",0,"## Description of the issue
+
+The [Clipper operators list](https://github.com/micolous/metrodroid/blob/master/data/clipper/operators.csv) has some interesting bits.  It looks like Walgreens has 0x1bc, 0x1be, 0x1db.
+
+Given the spread, there may be many more operator codes here, and they may represent an individual Walgreens location.
+
+## For card-specific issues
+
+- Name of the card type: Clipper
+- Name of the transit operator: SFMTA
+- Location: San Francisco, CA, US
+"
+micolous/metrodroid,closed,2018-09-09 11:11:03,Save key type (A or B) for future reference,[],0,
+micolous/metrodroid,closed,2018-08-27 02:09:59,Fix MIME-types for keys.,[],0,We don't support XML keys. Add x-extesion-bin to accepted types
+micolous/metrodroid,closed,2018-09-09 11:11:03,Detect blank mifare classic,[],0,
+micolous/metrodroid,closed,2018-08-27 01:05:45,nextfare: Add missing and in negative balance,[],0,"It's not entirely clear if the code is meant for 2-complement or sign flag.
+Current code would result in huge negative balances, so just change
+it to sign flag."
+micolous/metrodroid,closed,2018-08-27 01:11:40,nextfare: Skip record of type 0x89,[],0,They're present on Minneapolis cards and don't seem to provide any data
+micolous/metrodroid,closed,2018-08-27 01:16:26,Cleanup usage of reverseBuffer,[],0,
+micolous/metrodroid,closed,2018-09-03 13:08:45,Support intercode cards + cardinfo,[],0,It's on top of intercode
+micolous/metrodroid,closed,2018-09-29 13:36:24,Fixes for old androids,[],0,
+micolous/metrodroid,closed,2018-08-27 03:30:51,Lint pass,[],0,
+micolous/metrodroid,closed,2018-08-27 03:12:10,Hide parts of subscription that are not filled,[],0,
+micolous/metrodroid,closed,2018-08-27 03:23:43,Update podorozhnik database,[],0,Collected by Maria Komar
+micolous/metrodroid,closed,2018-08-29 23:22:12,Move history and supported cards into menu when using farebot theme,"[Label(name=""backlog"")]",0,"Well this is just me playing around.
+
+Do whatever you want with it."
+micolous/metrodroid,closed,2018-08-27 03:12:10,Don't crash if any of get* on TransitData fails.,[],0,
+micolous/metrodroid,closed,2018-09-02 05:22:34,Change shenzhen tong format to common csv,[],0,
+micolous/metrodroid,closed,2018-09-09 11:13:11,A converter from cardpeek format to farebotxml,[],0,
+micolous/metrodroid,closed,2018-09-03 13:09:05,"Support intercode cards (Navigo, Envibus and all other French cards)",[],0,
+micolous/metrodroid,closed,2018-08-27 00:31:52,Change Makefile to avoid long repeated list of mdsts,[],0,
+micolous/metrodroid,closed,2018-09-03 13:09:12,En1545,[],0,
+micolous/metrodroid,closed,2018-08-27 03:12:09,Podorozhnik: Add shared taxis,[],0,
+micolous/metrodroid,closed,2018-08-27 02:18:58,Ravkav: Shorten magic ID,[],0,"By comparing with various Opus and MOBIB it truns out that magic is just
+16 bits."
+micolous/metrodroid,closed,2018-08-27 01:23:40,Implement MOBIB based on mobib-extractor,[],0,
+micolous/metrodroid,closed,2018-08-27 07:13:12,Fix image resources for new cards (2.9.35),[],0,"## Description of the issue
+
+Some card readers were added recently that need images:
+
+* Compass (Vancouver)
+* Opus
+* Rav-Kav
+* T-Money"
+micolous/metrodroid,closed,2018-08-20 12:37:51,Add Opus support based on LecteurOpus,[],0,
+micolous/metrodroid,closed,2018-08-20 12:37:51,Several Podorozhnik improvements,[],0,"* Metro stations database (great thanks to Maria Komar for collecting dumps)
+* Better handling of rare cases when blocks are not updated in sync
+* Fix potential NPEs around parcel/unparcel
+* Improved readability by folding reversing and converting to array
+* Understand validator and TVM numbering scheme.
+* While on it updated Thanks"
+micolous/metrodroid,closed,2018-08-20 12:37:50,Change BER-TLV parsing to handle non-trivial cases as well,[],0,
+micolous/metrodroid,closed,2018-08-20 12:25:01,2-way converter between mobib-extractor and xml format,[],0,"While on it, make farebotxml_to_files python3-compatible."
+micolous/metrodroid,closed,2018-08-19 21:24:42,Add Opus support based on LecteurOpus,[],0,
+micolous/metrodroid,closed,2018-08-18 03:50:43,Simplify SeqGoTrip relying on StationTableReader,[],0,
+micolous/metrodroid,closed,2018-08-18 03:50:30,Mark empty sector on Mifare Classic as such,[],0,"On some cards there are a lot of empty sectors which makes it
+cumbersome to check that there is no new data in a new dump. So mark
+empty sectors as such."
+micolous/metrodroid,closed,2018-08-18 03:28:52,Save keytype in xml dump,[],0,Mostly for offline reference.
+micolous/metrodroid,closed,2018-08-19 08:31:02,Clipper add another walgreens ID and Pleasant Hill station.,[],0,
+micolous/metrodroid,closed,2018-08-18 03:50:06,Remove the need to always override hasTime,[],0,"Only very few cards store day but not time. So change logic to
+automatically detect null datetime as hasTime = null and leave override only
+when really necessarry."
+micolous/metrodroid,closed,2018-08-18 03:51:15,Fix Rav-Kav detection,[],0,"Turns out I was matching on part of manufacture date. Match on ticketing
+environment instead."
+micolous/metrodroid,closed,2018-08-18 00:33:07,Recognize the other Podorozhnik key for the sector 4,[],0,
+micolous/metrodroid,closed,2018-08-18 00:34:21,Compass Ultralight reader,[],0,
+micolous/metrodroid,closed,2018-08-18 00:34:57,Read clipper expiry,[],0,While on it change bitmasking to Utils.byteArrayToInt for reading balance
+micolous/metrodroid,closed,2018-08-18 00:35:22,Parse Orca topups,[],0,
+micolous/metrodroid,closed,2018-08-18 01:33:15,Support for Indonesian Kartu Multi Trip,[],0,"This code are based on latest changes on `master` to support reading [Kereta Commuter Indonesia](https://en.wikipedia.org/wiki/Kereta_Commuter_Indonesia)'s KMT cards, so I think it will be easier to merge. Some changes:
+- Usage of `Utils.unparcelCalendar`
+- Support mdst, based on @phcoder [code](https://github.com/phcoder/metrodroid/tree/kmt)"
+micolous/metrodroid,closed,2018-08-18 01:35:53,Fix crash when importing single card,[],0,
+micolous/metrodroid,closed,2018-08-18 00:36:59,Add option to always show raw station IDs,[],0,"This is useful when debugging or collecting database
+
+While on it add a generic way to add ""attributes"" to stations, like e.g.
+gate number. This will be reused in, at least, Podorozhnik."
+micolous/metrodroid,closed,2018-08-20 13:12:01,Group scans by card,[],0,
+micolous/metrodroid,closed,2018-08-19 08:33:09,Start Troika validator DB,[],0,
+micolous/metrodroid,closed,2018-08-15 11:21:40,Podorozhnik: Calculate serial on non-hybrid Podorozhnik.,[],0,
+micolous/metrodroid,closed,2018-08-15 11:28:17,Show correct message and card when reading Shenzhen Tong.,[],0,
+micolous/metrodroid,closed,2018-08-15 10:44:42,Enable Russian translations,[],0,
+micolous/metrodroid,closed,2018-08-15 11:31:07,Lint pass,[],0,
+micolous/metrodroid,closed,2018-08-15 11:23:48,Add functions parcelCalendar and unparcelCalendar.,[],0,"Parcelling Calendar is a bit tricky: nulls, millis and timezones. So encapsulate this in a dedicated function."
+micolous/metrodroid,closed,2018-08-15 11:22:04,Fix NPE in RavKavTrip,[],0,
+micolous/metrodroid,closed,2018-08-13 13:19:22,Start troika and podorozhnik validator DB,[],0,
+micolous/metrodroid,closed,2018-08-15 11:29:08,Several lint fixes,[],0,
+micolous/metrodroid,closed,2018-08-15 11:27:33,Move Orca and Clipper agency and station data to mdsts,[],0,This also includes several Clipper fixes.
+micolous/metrodroid,closed,2018-08-15 10:44:56,Add back lost ez-link mapping.csv,[],0,
+micolous/metrodroid,closed,2018-08-18 02:01:44,Add support for T-Money card,[],0,"Trip entry seems to have some kind of terminal serial number but I'm not
+sure how they map to transport. So for now all transactions are ""unknown"""
+micolous/metrodroid,closed,2018-08-12 12:48:52,Unknown stations UI disappeared,[],0,"## Description of the issue
+
+""Unknown stations"" reporting UI has disappeared on git `master`.
+
+## For card-specific issues
+
+- Name of the card type: Go card
+- Name of the transit operator: Translink
+- Location: Brisbane, AU
+
+## Steps to reproduce
+
+1. Load a Go card with unknown stations
+2. Go to the history tab
+
+## Expected behaviour
+
+The unknown stop report UI is shown.
+
+## Actual behaviour
+
+The unknown stop report UI is never shown.
+
+## Workarounds (if any)
+
+None
+
+## Details from About screen:
+
+- Version: 2.9.34-195-g3062482
+"
+micolous/metrodroid,closed,2018-08-12 13:00:25,Disable map for API < 17.,[],0,"On API 16 and earlier having a javascript interface creates a security problem.
+Just disable map for API < 17."
+micolous/metrodroid,closed,2018-08-12 13:45:59,Merge subscription and balances.,[],0,"Please subscriptions in a card layout under balances. This saves space and
+improves look and makes it more unified."
+micolous/metrodroid,closed,2018-08-12 13:02:53,Change desfire handling of AF command,[],0,"In some commands it means that sender needs to send additional data
+and not that there is additional data to fetch
+
+This is a preparation for unlocking cards."
+micolous/metrodroid,closed,2018-08-12 13:00:25,Add a helper to avoid handling unknown stations repeatedly,[],0,
+micolous/metrodroid,closed,2018-08-12 13:05:16,Fix Ultralight unauthorized handling,[],0,
+micolous/metrodroid,closed,2018-08-12 13:07:27,Desfire: save raw manufacturing data.,[],0,It's necessarry to unlock Leap cards.
+micolous/metrodroid,closed,2018-08-12 13:05:56,Fix csv2pb-szt,[],0,
+micolous/metrodroid,closed,2018-08-12 04:53:31,Ezlink: Switch to Singapore government-provided database,[],0,
+micolous/metrodroid,closed,2018-08-12 04:53:31,Remove hasFare as it's redundant,[],0,
+micolous/metrodroid,closed,2018-08-12 04:53:31,Move Clipper to GTFS,[],0,
+micolous/metrodroid,closed,2018-08-12 04:53:31,Station,[],0,Remove get*StationName as it provides only the duplicate data
+micolous/metrodroid,closed,2018-08-12 04:49:42,Orca,[],0,Fix Orca code and add a test
+micolous/metrodroid,closed,2018-08-12 04:47:18,Ezlink - part 2,[],0,Kill the list of SBS buses
+micolous/metrodroid,closed,2018-08-12 04:44:01,Ezlink,[],0,
+micolous/metrodroid,closed,2018-08-12 04:39:15,Add backup descriptor,[],0,
+micolous/metrodroid,closed,2018-08-12 04:36:16,Move mdst names out of MetrodroidApplication.,[],0,This allows avoid to change MetrodroidApplication every time a new DB is needed.
+micolous/metrodroid,closed,2018-08-12 04:38:55,Farebot data,[],0,Import Orca and Clipper updates from Farebot
+micolous/metrodroid,closed,2018-08-12 05:17:15,Import the theme from FareBot.,[],0,Great thanks to Eric Butler for this look.
+micolous/metrodroid,closed,2018-08-07 11:44:30,Allow showing both local and English name at the same time,[],0,"This is useful both for devs to check that both names are determined
+correctly and for the end users who may know some of foreign language
+and may be willing to compare visually with writings."
+micolous/metrodroid,closed,2018-08-07 11:19:32,Mark Octopus and SZT card names as localizable.,[],0,"They have names in Chinese, so it's definitely localizable"
+micolous/metrodroid,closed,2018-08-07 11:41:49,Support retrieving operator and line in StationTableReader.,[],0,This is very helpful to avoid inline databases in Opus and Shenzhen Tong.
+micolous/metrodroid,closed,2018-08-07 11:35:09,Support showing trips without starting time or location,[],0,"Current solution is to pretend that end time/station is start time/station
+if no real start data is available. It's confusing as there is no
+distinguishing between start and end visually and hence it can be assumed
+it's a start of a journey rather than the end. It's tolerable for occasional
+hiccup but Shenzhen Tong has only ending stations AFAICT."
+micolous/metrodroid,closed,2018-08-07 11:11:15,Make several strings localizable.,[],0,
+micolous/metrodroid,closed,2018-08-07 11:19:54,Clipper additions,[],0,
+micolous/metrodroid,closed,2018-08-12 04:38:05,RavKav support,[],0,This adds support for Israeli Rav-Kav cards.
+micolous/metrodroid,closed,2018-08-15 15:09:53,Adding Indonesian Kartu Multi Trip support,[],0,"This PR is to support Kartu Multi Trip reading on Metrodroid. Anyway, I'm not sure if this is the correct way to fork changes from different branch."
+micolous/metrodroid,closed,2018-08-07 11:19:15,Lint pass,[],0,Run android lint and fix real issues it finds
+micolous/metrodroid,closed,2018-08-07 11:41:18,Fix import and export functionality.,[],0,"Export all pushes the file size up by a lot. So old code doesn\t work with this
+file size. This fixes several issues:
+
+* Writing/reading files/sharing has to be done in async tasks with at most
+a weak reference to fragment (strictmode and everything)
+* file is too large to fit in a parcel atached to intent. So it needs to be
+saved and then passed as an URI.
+* Missing close() call resulted in 0-size files when saving to drive
+
+Paths for pre-KitKat were left alone as it's less of an issue."
+micolous/metrodroid,closed,2018-08-07 11:18:15,Few Podorozhnik cleanups,[],0,
+micolous/metrodroid,closed,2018-08-07 11:17:45,Cleanup TripObfuscator.,[],0,"It has quite some code dealing e.g. with UNIX timestamps whicha aren't used
+anymore. Kill them."
+micolous/metrodroid,closed,2018-08-07 11:17:19,Cleanup TransitCurrency.,[],0,"All users of JPY use TransitCurrency.JPY, so special handling
+of ""JPY"" symbol is no longer required.
+
+Remove unused imports."
+micolous/metrodroid,closed,2018-08-07 10:19:25,Add possiblity for blacklist and whitelist phones for MFC support.,[],0,"Apparently no way is 100%-working. So have black/whitelist for misdetections
+on popular phones."
+micolous/metrodroid,closed,2018-08-07 11:16:55,Add theme support,[],0,"Here we have 2 themes: Dark and Light. I also have a separate unpublished
+patch to import FareBot theme."
+micolous/metrodroid,closed,2018-08-12 04:36:16,Implement New Shenzhen Tong card scanning,[],0,
+micolous/metrodroid,closed,2018-08-04 02:16:32,Move Orca to Calendar,[],0,Change from CompatTrip to Trip and hence Calendar. Fixes the problem of showing local time in Orca
+micolous/metrodroid,closed,2018-08-04 04:01:13,Natively support multibalance cards,[],0,"This shows nice cards for each balance with expiry and name rather than putting them into info tab. In general, we probably want to avoid info tab as much as possible"
+micolous/metrodroid,closed,2018-10-28 12:35:39,EasyCard import from Farebot,"[Label(name=""backlog"")]",0,"Disclaimer: I don't have this card, so can't test"
+micolous/metrodroid,closed,2018-08-04 04:28:52,Import supported cards view from farebot,[],0,"Serial is often pretty log and is cut, this will give it more room
+
+This simple idea is copied from farebot"
+micolous/metrodroid,closed,2018-08-04 02:14:11,Move serial to subtitle,[],0,"Serial is often pretty log and is cut, this will give it more room
+
+This simple idea is copied from farebot"
+micolous/metrodroid,closed,2018-08-04 02:12:58,Move manufacturing info formatting to card itself.,[],0,Otherwise this code is horror.
+micolous/metrodroid,closed,2018-09-30 00:55:06,Do not scan octopus service codes if we can avoid it,[],0,"In empirical tests this scan causes card to have TagLostException
+in about 70% of times. While it's probably a card bug, it's something
+we have to cope with, hence use known service codes if we can."
+micolous/metrodroid,closed,2018-08-04 01:52:43,"Revamp ISO7816 code and support T-money card, Shenzhen Tong and Ravkav",[],0,This ISO7816 revamp allows easy reuse of code. Calypso reader is now basically a list of files to read
+micolous/metrodroid,closed,2018-07-30 11:40:24,Fix MIME types.,[],0,"Current code exports cards as text/plain but looks for text/xml for
+importing. So export as text/xml and accept both text/plain and text/xml for
+importing."
+micolous/metrodroid,closed,2018-07-29 08:25:05,RavKav support,[],0,
+micolous/metrodroid,closed,2018-08-04 05:40:05,Remove storage permission on API >= 19,[],0,"Metrodroid reads only files from its own directory and through
+StorageAccessFramework. Neither of them needs permission be it in
+manifest or runtime."
+micolous/metrodroid,closed,2018-08-04 02:14:54,Fix clipper crash,[],0,Clipper crashes due to bad cast to comparable. Fix it
+micolous/metrodroid,closed,2018-08-12 05:22:59,Rewrite Troika support,[],0,Now it includes support for single-ride and multi-ride tickets. Some more obscure tickets may still not work but they can be easily added when we come across them. This includes ultralight branch
+micolous/metrodroid,closed,2018-08-04 02:18:46,Ultralight,[],0,Several fixes to better support ultralight tags
+micolous/metrodroid,closed,2018-08-04 06:03:30,Add some more Podorozhnik data,[],0,
+micolous/metrodroid,closed,2018-07-16 11:03:01,"Spelling: ©, info, text-to-speech, thick enclosures",[],0,
+micolous/metrodroid,closed,2018-07-29 08:25:25,Support T-money card,[],0,"Based on reverse engineering. No code is copied from any other
+project."
+micolous/metrodroid,closed,2018-07-14 05:38:10,Support Troika and Podorozhnik cards including combined Troika+Podoro…,[],0,"…zhnik cards
+
+This is based on reverse-engineering and no code was used from any other
+project."
+micolous/metrodroid,open,,Propose New Logo,[],0,"Hello, I want to contribute to this awesome project, and I have a new logo design for you, if you allowed I will send to you :)"
+micolous/metrodroid,open,,FeliCa: Handle card moved out of field better,[],0,"## Unsupported card requests
+
+n/a
+
+## Description of the issue
+
+Reading a FeliCa card takes some time.  If the card is moved out of the field, there are strange errors given to the user.
+
+## For card-specific issues
+
+- Name of the card type: Suica / Pasmo / others
+- Name of the transit operator: JR East
+- Location: Japan
+
+## Steps to reproduce
+
+1. Hold a FeliCa card (ideally Suica/IC compatible) against the phone.
+2. Remove it from the field part way through reading.
+
+## Expected behaviour
+
+Something that indicates that the card left the NFC field.
+
+## Actual behaviour
+
+Exceptions within `nfc-felica-lib` are displayed in a dialog
+
+## Workarounds (if any)
+
+Hold the card ""properly"".
+
+## Log
+
+```
+06-15 16:37:00.588 12623-12623/? W/System.err: java.lang.NullPointerException: Attempt to invoke virtual method 'byte[] net.kazzz.felica.lib.FeliCaLib$IDm.getBytes()' on a null object reference
+06-15 16:37:00.589 12623-12623/? W/System.err:     at net.kazzz.felica.lib.FeliCaLib$CommandPacket.<init>(FeliCaLib.java:276)
+06-15 16:37:00.589 12623-12623/? W/System.err:     at net.kazzz.felica.FeliCaTag.readWithoutEncryption(FeliCaTag.java:268)
+06-15 16:37:00.589 12623-12623/? W/System.err:     at au.id.micolous.metrodroid.card.felica.FelicaCard.dumpTag(FelicaCard.java:190)
+06-15 16:37:00.590 12623-12623/? W/System.err:     at au.id.micolous.metrodroid.card.Card.dumpTag(Card.java:92)
+06-15 16:37:00.590 12623-12623/? W/System.err:     at au.id.micolous.metrodroid.activity.ReadingTagActivity$ReadingTagTask.doInBackground(ReadingTagActivity.java:194)
+06-15 16:37:00.590 12623-12623/? W/System.err:     at au.id.micolous.metrodroid.activity.ReadingTagActivity$ReadingTagTask.doInBackground(ReadingTagActivity.java:186)
+06-15 16:37:00.590 12623-12623/? W/System.err:     at android.os.AsyncTask$2.call(AsyncTask.java:333)
+06-15 16:37:00.590 12623-12623/? W/System.err:     at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+06-15 16:37:00.590 12623-12623/? W/System.err:     at android.os.AsyncTask$SerialExecutor$1.run(AsyncTask.java:245)
+06-15 16:37:00.590 12623-12623/? W/System.err:     at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1162)
+06-15 16:37:00.590 12623-12623/? W/System.err:     at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:636)
+06-15 16:37:00.590 12623-12623/? W/System.err:     at java.lang.Thread.run(Thread.java:764)
+```
+"
+micolous/metrodroid,closed,2018-02-08 12:33:43,"Pixel 2 (and XL) reports ""no MIFARE Classic support"" when it supports MIFARE Classic.","[Label(name=""bug"")]",1,"## Description of the issue
+
+Pixel 2 (walleye) and Pixel 2 XL (taimen) report ""no MIFARE Classic Support"" in Metrodroid, when they actually support it.
+
+iFixit reports ""NXP 81A04 39 04 sSD730 (likely NFC controller)"" for Pixel 2 XL.
+
+Pixel 2 is also able to communicate with MFC cards just fine.
+
+This is probably due to the extra detection routines added for the LG F60 picking up something it doesn't like."
+micolous/metrodroid,closed,2018-02-04 09:47:01,Investigate F-Droid build failure,"[Label(name=""bug""), Label(name=""infeasible"")]",1,"2.9.32 failed to build on F-Droid.
+
+https://f-droid.org/wiki/page/au.id.micolous.farebot"
+micolous/metrodroid,closed,2018-02-03 00:46:11,Spelling: Mifare → MIFARE and new intro,[],0,
+micolous/metrodroid,closed,2018-02-01 10:47:30,Show an error when a fully-locked DESFire card is scanned.,"[Label(name=""enhancement"")]",0,"We show debug information whenever a fully locked DESFire card is scanned (like a DESFire-based Oyster card).
+
+We should show some warning like what is done for Mifare Classic and Ultralight cards."
+micolous/metrodroid,closed,2018-03-17 06:05:03,Opal employee card not readable,[],0,"Please read the guidelines for contributions (CONTRIBUTING.md) before submitting new issues to this tracker. Failure to adhere to these guidelines may cause offense.
+
+## Unsupported card requests
+
+If the card is **not** presently supported by Metrodroid:
+
+- [ ] [I have read and acknowledged the New cards wiki page](https://github.com/micolous/metrodroid/wiki/New-cards)
+- [ ] I can provide dumps, transaction history, and balance records for more than one card from the operator.
+- [ ] I have attempted to understand the card format on my own.
+- [ ] I have provided notes on what I've found so far.
+
+## Description of the issue
+
+I have an Opal good card which looks same as Opal employee card.
+
+I get IOexception: tranceive failed
+
+## For card-specific issues
+
+- Name of the card type: opal
+- Name of the transit operator: transport for nsw
+- Location: ?
+
+For all issues reading a _currently supported card format_ (eg: balance shown is incorrect), please export a card dump from Metrodroid and email it to me privately.
+
+## Steps to reproduce
+
+1. Tap card to phone
+2. 
+3. 
+
+## Expected behaviour
+
+
+
+## Actual behaviour
+Error as above
+
+
+## Workarounds (if any)
+
+
+
+## Logs
+
+Generate a bug report ZIP using the instructions here: https://developer.android.com/studio/debug/bug-report.html
+
+Please do not attach it to this issue. You may be asked for a copy later via private email.
+
+## Details from About screen:
+
+- Version:2.9.3(32)
+- Model:nexus 6p (angler)
+- Manufacturer:huawei
+- Android OS version:8.1.0
+- NFC: enabled
+- Mifare Classic: supported
+
+"
+micolous/metrodroid,closed,2017-12-17 01:22:49,"paste, MIFARE, decipher, ferry, marked noun",[],0,
+micolous/metrodroid,closed,2017-11-12 08:07:37,"When language is set to Japanese, cents are rounded off",[],0,"## Description of the issue
+
+When the system language is set to Japanese, cents are rounded off of Australian dollars.
+
+## Steps to reproduce
+
+1. Set system language to Japanese
+2. Scan a card where the currency is Australian dollars
+3. Observe balance.
+
+## Expected behaviour
+
+A$1.23 will be displayed as ""A$1.23"".
+
+## Actual behaviour
+
+A$1.23 will be displayed as ""A$1"".
+
+Only impacts development / `master` branch."
+micolous/metrodroid,closed,2017-10-29 12:00:49,Privacy / Obfuscation Mode,"[Label(name=""enhancement""), Label(name=""work in progress"")]",0,"In order to make it easier to screenshot Metrodroid and do live demos, add some features that obfuscate real card details.  Desired features:
+
+- [x] Hiding the card number.
+- [x] Assigning trips to different days (in a consistent fashion).
+- [x] Assigning trips to different times.
+- [x] Changing the balance on the card by `fake_balance = (X * real_balance) + Y`, where X is a random number close to 1.0 and Y is a random number between -500 and +500.
+- [x] Add a similar trip cost changer, using different random numbers to the balance.
+- [x] Handle dates and times on custom info panels.
+- [x] Handle timestamps on scan times shown in history.
+- [x] When any privacy toggle is enabled, add a note on the main screen."
+micolous/metrodroid,closed,2017-09-28 13:52:44,Gradle won't compile,"[Label(name=""question"")]",0,"Gradle 'metrodroid-master' project refresh failed
+Error:Project : declares a dependency from configuration 'compile' to configuration 'default' which is not declared in the descriptor for project :nfc-felica-lib."
+micolous/metrodroid,closed,2017-09-03 10:12:12,OnePlus 5 does not support all-00 Mifare Classic key (was: OV-Chipkaart not working),"[Label(name=""bug""), Label(name=""infeasible"")]",1,"I have succesfully cracked the A and B keys using:
+https://github.com/aczid/crypto1_bs
+
+I am able to make a dump with MFOC now. If I load this dump into metrodroid and scan my card it still tells me I need the encryption keys. With a plaintext file cointating the A and/or B keys I get the same result.
+
+I can read out the MFOC dump using mfocGUI.
+
+Attached is the MFOC dump.
+[mfoc.zip](https://github.com/micolous/metrodroid/files/1206570/mfoc.zip)
+
+
+"
+micolous/metrodroid,closed,2017-11-04 08:40:30,ITSO support (UK-wide transport smartcards),[],0,"(Disclaimer: this is not a request for support, but just a note in case anyone else wants to work on this. I have read the New cards wiki page. Sadly I don't have time to work on this myself, but I wanted to record my research in case it was useful to others.)
+
+If anyone is interested in working on support for cards in the United Kingdom, many/most operators (including ScotRail, my local operator) use the ITSO specification. This specification is [freely available](https://www.itso.org.uk/services/specification-resources/the-itso-specification/itso-technical-specification/) and quite detailed.
+
+At one time @rjmunro did some work on ITSO support in farebot: https://github.com/codebutler/farebot/pull/56 which may serve as a basis for this work.
+
+I'm happy to assist with dumps etc from my ScotRail smartcard if that's of use.
+
+There is a closed-source app on Google Play (Rambus Smart Ticket Checker) which supports these cards, but it would be good to have this code in the open."
+micolous/metrodroid,closed,2017-01-21 04:35:48,Add buttons to get the app on fdroid and play store ;),[],0,
+micolous/metrodroid,closed,2016-12-30 01:21:05,nextfare: Subscription reader fails when there is more than one travel pass and no unused travel pass,"[Label(name=""bug"")]",1,"- [x] I'm using the current release version of Metrodroid, or current `master`.
+
+Nexus 7 (ME370T) - Version 5.1.1 when reading Transit Access Pass.
+
+The app is crashing when I try to view the history, subscription, or info pages once I have scanned the TAP card. I attached the log file from after loading the card to when the crash occurs.
+[log.txt](https://github.com/micolous/metrodroid/files/676466/log.txt)
+
+
+
+
+"
+micolous/metrodroid,closed,2018-09-30 00:50:54,Improve Bilhete Único support,"[Label(name=""enhancement""), Label(name=""help wanted"")]",0,"Bilhete Único currently looks for `bcdefghi` at the tail end of Sector 0 Block 0 on Mifare Classic cards.  This is actually associated with the card vendor that they use, specifically the [Fudan Microelectronics FM11RF08](http://www.seeedstudio.com/document/FM11RF08(English).pdf) (a Mifare Classic clone), so I disabled it.  This picks up many false positives with other agencies and cards which use the same vendor.
+
+**I need some samples of cards (annotated dumps) in order to build a better detection for them.** 
+ https://github.com/vpereira/bilhete seems to have a few dumps.  **But a lot of the information is in Portuguese, which I don't speak.**
+
+There's a lot more data on the card which the reader doesn't decode, but not enough notes to be useful :( It only reads the balance.
+
+There doesn't appear to be any standard header on these cards. They also use standard checksumming on records, so anyone who does the same thing will also be mis-detected. One of the card dumps listed has different manufacturer data, so even some BÚ cards will be not detected as BÚ.
+
+This will require that certain cards be set as a ""fallback"" reader in order to work properly. Looking at the other MFC transit parsers, they implement more robust checks so aren't affected by this problem.
+"
+micolous/metrodroid,closed,2016-12-28 17:17:28,LG G3 Mifare Classic read failure,[],0,"With Metrodroid 2.9.29 (the latest as of yesterday, apparently), reading a Niagara Falls Adventure Pass (for the city of Niagara Falls, ON, CA) results in IOException: Transceive failed for each sector.  Expanding any of the sectors results in Metrodroid force closing.
+
+The card is a Mifare Classic 1k, and I've successfully dumped the card contents with mfoc.  This dump is attached, along with a screenshot of the failed read.
+
+My phone is an LG G3.  Other NFC apps on this same device are able to read this card without issue.
+Likewise, I'm able to use Metrodroid to read the contents of another Mifare Classic that I have - this issue appears to be solely limited to Metrodroid reading this specific card.
+
+![screenshot_2016-12-26-13-39-08](https://cloud.githubusercontent.com/assets/6100139/21485810/32c4cd24-cb77-11e6-9504-0a1649f2ae8c.png)
+
+[nfap.zip](https://github.com/micolous/metrodroid/files/673270/nfap.zip)
+
+
+"
+micolous/metrodroid,open,,Setup LAX TAP support for Stops website,"[Label(name=""enhancement"")]",0,"At present, Stops website only supports the Go card.  It should also support LAX TAP card.
+
+There are some quirks to handle:
+
+- Multiple agencies, not just 1 agency.
+- Metro Bus stop IDs actually show the route number, not the stop at which the service was boarded
+
+This will need some refactoring of the site."
+micolous/metrodroid,closed,2016-12-26 08:18:14,TAP Card Expiration Date,[],0,"Hi Micolous,
+
+The TAP Card functionality on the app is wonderful. I'm working on compiling a list of bus routes and the remaining train stops to add eventually.
+
+In the mean time, I believe I've found the sector of the card that shows when the card expires. 
+[card_data.txt](https://github.com/micolous/metrodroid/files/671671/card_data.txt)
+
+Would it be possible to add in the expiration data as part of the card's information page in the app?
+
+Thanks, Steven"
+micolous/metrodroid,closed,2017-01-21 04:14:40,MyWay (ACT) / SmartRider (Perth),"[Label(name=""enhancement""), Label(name=""help wanted""), Label(name=""work in progress"")]",0,"MyWay and SmartRider are supposedly very similar systems.  Currently have 1 sample of a MyWay card, and need some more samples of both in order to complete the work.
+
+Documented MyWay format here: https://github.com/micolous/metrodroid/wiki/MyWay
+
+However the magic is still unknown, so can't implement a full reader yet."
+micolous/metrodroid,closed,2016-11-17 23:11:07,Added New Stops,[],0,Completed stop list for the gold line.
+micolous/metrodroid,closed,2016-11-03 12:46:48,"Octopus (HK) results in ""Attempt to read from null array""","[Label(name=""bug"")]",1,"Need to fix this so unknown FeliCa cards work correctly in raw mode.
+"
+micolous/metrodroid,closed,2016-10-29 12:43:29,seq_go: Implement concessional fares,[],0,"At present, the fare calculation logic only handles full fares.
+
+Concessional fares are also a thing, but for simplicity this wasn't implemented in the last version of Metrodroid.
+
+Two things need to happen in order to make this work:
+
+1) The fare calculator needs to know how to calculate concessional fares. This will require some extension to the algorithm to allow dropping in extra fare types.
+
+2) A way to tell between concessional and adult cards needs to be found.
+"
+micolous/metrodroid,closed,2016-10-06 08:54:17,Mifare Classic auth retry logic,[],0,"Some cards are unreliable, and will return authentication failures, even when the key is correct.  Thick phone cases also don't help here.
+
+This can lead someone to believe that they have entered their key incorrectly.
+
+Lets be a bit more aggressive and try each key multiple times before actually giving up.
+"
+micolous/metrodroid,closed,2016-10-09 04:56:11,Nextfare refactor (#17),"[Label(name=""enhancement"")]",0,"This refactors the `seq_go` reader into a generic `nextfare` reader.
+
+This allows basic reading of the LAX TAP card.
+"
+micolous/metrodroid,closed,2016-12-01 12:18:55,Los Angeles Transit Access Pass,"[Label(name=""enhancement"")]",0,"Hi Micolous,
+
+I have an ""add my transit provider"" request. Unlike other requests, you've already done most of the work. I live in Los Angeles, which uses the Transit Access Pass card, also known as TAP. When used with Metrodroid, it is recognized as the Go Card (SEQ), with the correct serial number showing. The card balance and history tabs are sometimes accurate but usually show incorrect data. It would seem that the Go Card and TAP Card share record types, but have varying sectors for where the records go. Using your description of the record types, I was able to correctly extrapolate data from my card scans including tap, top-up, and balance records. The Metrodroid app is able to do this, but it only works on certain transactions.
+
+I created a wiki page similar to your existing ones with information about the TAP card, including the data locations of the card. Unfortunately, a total noob at programming, so I can't offer much help with the actual coding. It seems that this card is pretty similar to the ones you have already added to this app. I am able to provide more data about the card if needed, including actions that the app currently does and does not read correctly. Would implementing this card be hard to accomplish? I
+
+Thanks, Steven
+
+[Transit Access Pass (TAP).txt](https://github.com/micolous/metrodroid/files/477886/Transit.Access.Pass.TAP.txt)
+"
+micolous/metrodroid,closed,2016-09-12 14:40:31,seq_go: Implement support for fares,"[Label(name=""enhancement"")]",0,"Fares don't appear to be stored on the card.
+
+In order to calculate the fare, you need to know what zone a particular stop is in, and which fare table version to use for the agency.
+
+This also probably means we need to handle continuations properly, which I'm unsure what state it is in.
+
+The Translink GTFS data contains zone information (column: `zone_id`). We include this information at present with `compile_stops_from_gtfs.py`, as the `zone_id` column. This works for everything but the Airport stations which do not contain zone information.
+
+What needs to happen:
+1. Fix airport station issues
+2. Implement fare calculator, with support for multiple editions of the fare table
+3. Identify and handle continuations
+4. Display all of this information in the UI
+"
+micolous/metrodroid,closed,2016-03-28 00:28:24,Date header is not shown when previous trip is on the same day of week in the same year and month,"[Label(name=""bug"")]",1,"If a trip is on 2016-03-16, and the previous trip shown was on 2016-03-23, the date header for the trip on 2016-03-16 would not be shown.  This is because they are on the same day of the week (Wednesday) in the same year and month.
+
+Offending function: `CardsTripFragment.UseLogListAdapter.isFirstInSection` / `.isLastInSection`:
+
+https://github.com/micolous/metrodroid/blob/6e0178c/src/main/java/com/codebutler/farebot/fragment/CardTripsFragment.java#L228
+
+Appears to call `Date.getDay` instead of `Date.getDate`.
+
+This appears to also be a bug in Farebot.
+"
+micolous/metrodroid,closed,2016-02-25 11:53:41,Show more debug info for FeliCa cards,"[Label(name=""enhancement"")]",0,"It should be possible to use Metrodroid to read enough data to reverse engineer a FeliCa card (eg: codebutler/farebot#115).
+
+At present only basic data is shown.
+"
+micolous/metrodroid,closed,2016-02-20 22:53:58,Audit all the copyrights,"[Label(name=""enhancement"")]",0,"Most of the code copyrights are unacknowledged.  Need to work through the codebase and work out who wrote what from the git history, in order to correctly attribute those authors.
+"
+micolous/metrodroid,closed,2016-02-20 22:54:05,Work through Play Store policy complaints,"[Label(name=""bug""), Label(name=""enhancement"")]",1,"List of items provided by J to address before the next Play Store version.
+
+Provide J new screenshots before release which show that the issues have been addressed.
+"
+micolous/metrodroid,closed,2016-02-07 13:07:49,Remove GMS dependency,"[Label(name=""enhancement"")]",0,"Currently depends on GMS for Google Maps API v2.  The older versions of Farebot were available in F-Droid, but then depended on Google Maps API v1, which is deprecated.
+
+It seems non-trivial to remove Google Maps API from the application at build time.
+
+Instead, replace the mapping functionality with something like MapQuest Open tiles in a WebView with Leaflet.
+"
+micolous/metrodroid,closed,2016-02-06 10:58:30,"Handle ""unknown stanus code: ae"" for DESFire","[Label(name=""bug"")]",1,"This represents ""access denied"" (possibly with no key supplied), so our UI and exports should explain this a little bit better.
+"
+micolous/metrodroid,closed,2015-12-28 07:26:31,Gocard (Brisbane),"[Label(name=""enhancement""), Label(name=""work in progress"")]",0,"When implemented this will fix upstream bug codebutler/farebot#10.
+
+Some basic understanding of the format is listed in this Python script: https://gist.github.com/micolous/5884e82a5ea7aff6c1df
+
+This will need a database of stops built.  All cards are Mifare Classic 1K, all sectors locked, and require unique encryption keys for each card.
+"
+micolous/metrodroid,closed,2017-11-04 08:30:36,Adelaide Metrocard,"[Label(name=""enhancement""), Label(name=""work in progress"")]",0,"Work in progress: Implementing support for Adelaide's [Metrocard](https://github.com/micolous/farebot/wiki/Metrocard-%28Adelaide%29).
+- [x] Identifies cards
+- [ ] Reads last trips from the card (partially implemented)
+- [ ] Read balance information
+- [ ] Read subscriptions
+- [ ] Read card serial number
+"
+micolous/metrodroid,closed,2016-01-11 14:01:17,"Myki (Melbourne), limited data only","[Label(name=""enhancement""), Label(name=""infeasible"")]",0,"Work in progress.
+- [x] Identifies card
+- [x] Reads serial number (mostly)
+- [ ] Reads balance
+- [ ] Reads trips
+- [ ] Reads subscriptions
+- [ ] Reads refills
+"
+micolous/metrodroid,closed,2015-11-08 12:46:00,"Metrocard (Adelaide), work in progress","[Label(name=""enhancement""), Label(name=""work in progress"")]",0,"Work in progress: Implementing support for Adelaide's [Metrocard](https://github.com/micolous/farebot/wiki/Metrocard-%28Adelaide%29).
+- [x] Identifies cards
+- [ ] Reads last trips from the card (partially implemented)
+- [ ] Read balance information
+- [ ] Read subscriptions
+- [ ] Read card serial number
+"
+micolous/metrodroid,closed,2015-08-16 05:38:25,Date/time formatting settings are ignored in many parts of the UI,"[Label(name=""bug"")]",1,"Many transit providers have this hard coded, and some of the common elements like Subscriptions and Trips have these hard coded as well.
+
+We should use the regional settings from the phone instead.
+"
+micolous/metrodroid,closed,2015-08-15 15:09:11,Detect absence of Mifare Classic support,[],0,"Some new phones (like Nexus 4/5/6) don't support Mifare Classic.
+
+Farebot doesn't handle this very well, so implement a way for this to gracefully degrade on these devices.
+"
+micolous/metrodroid,closed,2015-08-15 15:45:51,Implement About dialog,"[Label(name=""enhancement"")]",0,"This should show the program version, and the phone hardware data.
+"
+micolous/metrodroid,closed,2015-08-12 10:55:17,Implement support for Manly Fast Ferry,[],0,"Needs a bit of work on the detection and some additional samples for validation.
+
+Docs: https://github.com/micolous/farebot/wiki/Manly-Fast-Ferry
+"
+micolous/metrodroid,closed,2015-08-03 07:23:25,Add name and authority code for Everett Transit. (ORCA),[],0,"Rebase of cyberkitsune/add-orca-et (codebutler/farebot#96) to micolous/farebot.
+"

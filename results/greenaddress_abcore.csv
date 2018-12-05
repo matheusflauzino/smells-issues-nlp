@@ -1,0 +1,2 @@
+"Problem","Package","File","Priority","Line","Description","Rule set","Rule"
+"1","com.greenaddress.abcore","/home/matheus/smells-issues-nlp/repositories/greenaddress_abcore/app/src/main/java/com/greenaddress/abcore/RPCIntentService.java","3","135","Avoid really long methods.","Design","ExcessiveMethodLength"

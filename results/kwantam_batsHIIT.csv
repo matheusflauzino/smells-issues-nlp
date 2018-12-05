@@ -1,0 +1,3 @@
+"Problem","Package","File","Priority","Line","Description","Rule set","Rule"
+"1","org.jfet.batsHIIT","/home/matheus/smells-issues-nlp/repositories/kwantam_batsHIIT/app/src/main/java/org/jfet/batsHIIT/HIITMain.java","3","24","This class has too many methods, consider refactoring it.","Design","TooManyMethods"
+"1","org.jfet.batsHIIT","/home/matheus/smells-issues-nlp/repositories/kwantam_batsHIIT/app/src/main/java/org/jfet/batsHIIT/HIITRun.java","3","73","Avoid really long methods.","Design","ExcessiveMethodLength"

@@ -1,0 +1,2 @@
+"Problem","Package","File","Priority","Line","Description","Rule set","Rule"
+"1","com.kanedias.vanilla.coverfetch","/home/matheus/smells-issues-nlp/repositories/vanilla-music_vanilla-music-cover-fetch/app/src/main/java/com/kanedias/vanilla/coverfetch/CoverShowActivity.java","3","108","This class has too many methods, consider refactoring it.","Design","TooManyMethods"

@@ -1,0 +1,6 @@
+"Problem","Package","File","Priority","Line","Description","Rule set","Rule"
+"1","org.gittner.osmbugs.activities","/home/matheus/smells-issues-nlp/repositories/Gittner_OSMBugs/app/src/main/java/org/gittner/osmbugs/activities/BugMapActivity.java","3","61","This class has too many methods, consider refactoring it.","Design","TooManyMethods"
+"1","org.gittner.osmbugs.api","/home/matheus/smells-issues-nlp/repositories/Gittner_OSMBugs/app/src/main/java/org/gittner/osmbugs/api/KeeprightApi.java","3","107","Avoid really long methods.","Design","ExcessiveMethodLength"
+"1","org.gittner.osmbugs.bugs","/home/matheus/smells-issues-nlp/repositories/Gittner_OSMBugs/app/src/main/java/org/gittner/osmbugs/bugs/KeeprightBug.java","3","48","Avoid long parameter lists.","Design","ExcessiveParameterList"
+"1","org.gittner.osmbugs.parser","/home/matheus/smells-issues-nlp/repositories/Gittner_OSMBugs/app/src/main/java/org/gittner/osmbugs/parser/KeeprightParser.java","3","19","Avoid really long methods.","Design","ExcessiveMethodLength"
+"1","org.gittner.osmbugs.parser","/home/matheus/smells-issues-nlp/repositories/Gittner_OSMBugs/app/src/main/java/org/gittner/osmbugs/parser/OsmoseParser.java","3","67","Avoid really long methods.","Design","ExcessiveMethodLength"

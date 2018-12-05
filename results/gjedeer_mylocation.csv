@@ -1,0 +1,2 @@
+"Problem","Package","File","Priority","Line","Description","Rule set","Rule"
+"1","net.mypapit.mobile.myposition","/home/matheus/smells-issues-nlp/repositories/gjedeer_mylocation/app/src/main/java/net/mypapit/mobile/myposition/MyLocationActivity.java","3","78","This class has too many methods, consider refactoring it.","Design","TooManyMethods"

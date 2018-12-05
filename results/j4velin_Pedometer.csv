@@ -1,0 +1,8 @@
+"Problem","Package","File","Priority","Line","Description","Rule set","Rule"
+"1","de.j4velin.pedometer","/home/matheus/smells-issues-nlp/repositories/j4velin_Pedometer/src/main/java/de/j4velin/pedometer/Database.java","3","34","This class has too many methods, consider refactoring it.","Design","TooManyMethods"
+"1","de.j4velin.pedometer","/home/matheus/smells-issues-nlp/repositories/j4velin_Pedometer/src/main/java/de/j4velin/pedometer/SensorListener.java","3","54","This class has too many methods, consider refactoring it.","Design","TooManyMethods"
+"1","de.j4velin.pedometer.ui","/home/matheus/smells-issues-nlp/repositories/j4velin_Pedometer/src/main/java/de/j4velin/pedometer/ui/Fragment_Overview.java","3","60","This class has too many methods, consider refactoring it.","Design","TooManyMethods"
+"1","de.j4velin.pedometer.ui","/home/matheus/smells-issues-nlp/repositories/j4velin_Pedometer/src/main/java/de/j4velin/pedometer/ui/Fragment_Settings.java","3","60","This class has too many methods, consider refactoring it.","Design","TooManyMethods"
+"1","de.j4velin.pedometer.ui","/home/matheus/smells-issues-nlp/repositories/j4velin_Pedometer/src/play/java/de/j4velin/pedometer/ui/Activity_Main.java","3","56","This class has too many methods, consider refactoring it.","Design","TooManyMethods"
+"1","de.j4velin.pedometer.util","/home/matheus/smells-issues-nlp/repositories/j4velin_Pedometer/src/play/java/de/j4velin/pedometer/util/GoogleFit.java","3","52","Avoid really long methods.","Design","ExcessiveMethodLength"
+"1","de.j4velin.pedometer.util","/home/matheus/smells-issues-nlp/repositories/j4velin_Pedometer/src/play/java/de/j4velin/pedometer/util/PlayServices.java","3","82","Avoid really long methods.","Design","ExcessiveMethodLength"

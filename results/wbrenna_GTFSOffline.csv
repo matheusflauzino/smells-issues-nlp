@@ -1,0 +1,8 @@
+"Problem","Package","File","Priority","Line","Description","Rule set","Rule"
+"1","com.wbrenna.gtfsoffline","/home/matheus/smells-issues-nlp/repositories/wbrenna_GTFSOffline/GTFSOffline/src/com/wbrenna/gtfsoffline/FavFragmentHelper.java","3","137","Avoid really long methods.","Design","ExcessiveMethodLength"
+"1","com.wbrenna.gtfsoffline","/home/matheus/smells-issues-nlp/repositories/wbrenna_GTFSOffline/GTFSOffline/src/com/wbrenna/gtfsoffline/LocationFragmentHelper.java","3","145","Avoid really long methods.","Design","ExcessiveMethodLength"
+"1","com.wbrenna.gtfsoffline","/home/matheus/smells-issues-nlp/repositories/wbrenna_GTFSOffline/GTFSOffline/src/com/wbrenna/gtfsoffline/MainActivity.java","3","89","Avoid really long methods.","Design","ExcessiveMethodLength"
+"2","com.wbrenna.gtfsoffline","/home/matheus/smells-issues-nlp/repositories/wbrenna_GTFSOffline/GTFSOffline/src/com/wbrenna/gtfsoffline/MainActivity.java","3","210","Avoid really long methods.","Design","ExcessiveMethodLength"
+"1","com.wbrenna.gtfsoffline","/home/matheus/smells-issues-nlp/repositories/wbrenna_GTFSOffline/GTFSOffline/src/com/wbrenna/gtfsoffline/ServiceCalendar.java","3","239","Avoid really long methods.","Design","ExcessiveMethodLength"
+"2","com.wbrenna.gtfsoffline","/home/matheus/smells-issues-nlp/repositories/wbrenna_GTFSOffline/GTFSOffline/src/com/wbrenna/gtfsoffline/ServiceCalendar.java","3","392","Avoid really long methods.","Design","ExcessiveMethodLength"
+"3","com.wbrenna.gtfsoffline","/home/matheus/smells-issues-nlp/repositories/wbrenna_GTFSOffline/GTFSOffline/src/com/wbrenna/gtfsoffline/ServiceCalendar.java","3","760","Avoid really long methods.","Design","ExcessiveMethodLength"

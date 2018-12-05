@@ -1,0 +1,2 @@
+"Problem","Package","File","Priority","Line","Description","Rule set","Rule"
+"1","uk.co.keepawayfromfire.screens","/home/matheus/smells-issues-nlp/repositories/Cj-Malone_Screens/app/src/main/java/uk/co/keepawayfromfire/screens/MainActivity.java","3","42","Avoid really long methods.","Design","ExcessiveMethodLength"

@@ -1,0 +1,10 @@
+repository,state,closed_at,title,label,is_bug,body
+dftec-es/planetcon,closed,2017-07-03 17:24:05,Adding a french translation,[],0,
+dftec-es/planetcon,closed,2017-09-07 23:30:03,Minor changes in some XML files,[],0,
+dftec-es/planetcon,closed,2017-09-07 23:31:19,Minor changes of plain-text files,[],0,
+dftec-es/planetcon,open,,Add a file for Travis CI,[],0,"Why?
+
+- Continuous Integration is good.
+- It explains how to build."
+dftec-es/planetcon,closed,2017-03-22 21:31:45,buttons to get the app,[],0,This PR adds two buttons to get the app on f-droid and google play store
+dftec-es/planetcon,open,,These issues will be taken into account for next version,[],0,Feel free to open issues here for the version available in google play and f-droid.

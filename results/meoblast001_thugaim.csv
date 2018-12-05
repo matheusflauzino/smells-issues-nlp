@@ -1,0 +1,4 @@
+"Problem","Package","File","Priority","Line","Description","Rule set","Rule"
+"1","info.meoblast001.thugaim","/home/matheus/smells-issues-nlp/repositories/meoblast001_thugaim/src/info/meoblast001/thugaim/Thugaim.java","3","33","This class has too many methods, consider refactoring it.","Design","TooManyMethods"
+"1","info.meoblast001.thugaim.engine","/home/matheus/smells-issues-nlp/repositories/meoblast001_thugaim/src/info/meoblast001/thugaim/engine/Actor.java","3","23","This class has too many methods, consider refactoring it.","Design","TooManyMethods"
+"1","info.meoblast001.thugaim.engine","/home/matheus/smells-issues-nlp/repositories/meoblast001_thugaim/src/info/meoblast001/thugaim/engine/Graphics.java","3","27","This class has too many methods, consider refactoring it.","Design","TooManyMethods"

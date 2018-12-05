@@ -1,0 +1,9 @@
+files,language,blank,comment,code,"http://cloc.sourceforge.net v 1.60  T=4.17 s (52.5 files/s, 7911.1 lines/s)"
+120,Java,3509,2502,14701
+69,XML,796,13,6821
+17,Arduino Sketch,262,294,1301
+5,C++,192,626,1001
+5,C/C++ Header,90,102,442
+1,Bourne Again Shell,20,21,123
+1,DOS Batch,24,2,64
+1,YAML,8,10,56

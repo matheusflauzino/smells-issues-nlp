@@ -1,0 +1,110 @@
+repository,state,closed_at,title,label,is_bug,body
+RyuzakiKK/NoteCrypt,closed,2018-10-31 15:19:58,Add dutch translation,[],0,Add a file for dutch translations.
+RyuzakiKK/NoteCrypt,closed,2018-10-31 15:21:19,Writing and translation errors corrected,[],0,
+RyuzakiKK/NoteCrypt,closed,2018-10-28 18:38:54,Add Indonesian translation,[],0,
+RyuzakiKK/NoteCrypt,closed,2018-10-28 18:39:10,Fixes in Greek translation,[],0,Hello. I've fixed some spelling errors in the Greek translation.
+RyuzakiKK/NoteCrypt,closed,2018-10-28 18:41:23,Added Indonesian translation,[],0,
+RyuzakiKK/NoteCrypt,closed,2018-10-16 18:04:33,Update strings.xml,[],0,better suggestion
+RyuzakiKK/NoteCrypt,closed,2018-10-09 16:16:48,Added Finnish translation,[],0,
+RyuzakiKK/NoteCrypt,closed,2018-10-09 16:17:31,FAQs.md,[],0,This is the FAQs document. Please point out where you need corrections to be made. Thanks.
+RyuzakiKK/NoteCrypt,closed,2018-10-07 11:46:15,Added Thai translation,[],0,Added Thai translation. https://github.com/RyuzakiKK/NoteCrypt/issues/13
+RyuzakiKK/NoteCrypt,closed,2018-10-07 14:10:38,Privacy.md,[],0,"This is the privacy policy document I earlier proposed to create. You can review it for corrections and if there are corrections to be made, let me know so I can make the corrections. Thanks."
+RyuzakiKK/NoteCrypt,closed,2018-10-16 18:08:51,Privacy policy,[],0,"Hi. I'm Harry. 
+I'd like to contribute to your project. I'm a content creator and my I help out mostly by creating documents I feel and think projects should have. Privacy Policy Statements, FAQs, About etc. Mostly anything that has to do with text styled with markdown. 
+I think it'll be cool to have a privacy policy statement that will put forward your policies to end users about information collection and use but I'm quite certain you don't collect any user information externally. However, it's still a good thing end users are made aware of this.
+
+I would love to hear your thoughts on this.
+Thanks"
+RyuzakiKK/NoteCrypt,closed,2018-10-06 08:29:36,Vietnamese Translation,[],0,Added initial Vietnamese Translation
+RyuzakiKK/NoteCrypt,closed,2018-10-06 09:07:25,unit tests for StringMethods,[],0,Proposal of unit tests. Started with simple unit test examples for StringMethods.java
+RyuzakiKK/NoteCrypt,closed,2018-10-04 08:10:36,Added Mexican Spanish,[],0,Added Mexican Spanish
+RyuzakiKK/NoteCrypt,closed,2018-10-03 07:44:45,Some translation corrections on portuguese version,[],0,Minor corrections and fixed some typos and graphic accentuation
+RyuzakiKK/NoteCrypt,closed,2018-10-03 07:43:07,Translation to polish,[],0,
+RyuzakiKK/NoteCrypt,closed,2018-10-02 21:11:49,translation to Polish added,"[Label(name=""invalid"")]",0,
+RyuzakiKK/NoteCrypt,closed,2018-10-02 20:56:39,translation to Polish added,"[Label(name=""invalid"")]",0,
+RyuzakiKK/NoteCrypt,closed,2018-10-02 17:53:44,Add Spanish (es_ES) translations and fix some translations causing build problems,[],0,"I have added and tested Spanish translations (#13):
+
+![image](https://user-images.githubusercontent.com/282431/46366278-e845d300-c67a-11e8-8a5b-8b75134d1c9c.png)
+
+Also, I have fixed some unescaped characters in de_DE, kk_KZ and uk_UA translations (build was failing). Maybe you should add some CI tool like Travis to check this before merging PR's :)."
+RyuzakiKK/NoteCrypt,closed,2018-10-02 16:13:41,Added Czech translation,[],0,I have added Czech translation - #13 
+RyuzakiKK/NoteCrypt,closed,2018-10-02 14:02:06,Corrected little mistakes,[],0,Corrected small mistakes done on #17
+RyuzakiKK/NoteCrypt,closed,2018-10-02 11:41:09,chore: Add Hindi translation,[],0,I have added Hindi translation - #13 
+RyuzakiKK/NoteCrypt,closed,2018-10-02 10:57:34,"Fixed typos, grammar and punctuation in French translations.",[],0,
+RyuzakiKK/NoteCrypt,closed,2018-10-02 07:14:36,Added Kazakh translations,[],0,"I hope you will have customers from Kazakhstan, so here are my translations"
+RyuzakiKK/NoteCrypt,closed,2018-10-02 07:12:38,Fix typo in strings.xml,[],0,
+RyuzakiKK/NoteCrypt,closed,2018-10-02 07:11:36,Initialize french translation for France,[],0,"Hi there,
+In order to contribute to issue #13, please have a look to this pull request aiming at the creation of the french translation.
+Best regards."
+RyuzakiKK/NoteCrypt,closed,2018-10-02 07:10:05,Greek Translation,[],0,
+RyuzakiKK/NoteCrypt,closed,2018-10-02 07:09:12,Added Ukrainian translation.,[],0,#13
+RyuzakiKK/NoteCrypt,closed,2018-10-01 21:14:37,Added arabic language translation,[],0,
+RyuzakiKK/NoteCrypt,closed,2018-10-02 07:49:14,Added Danish translations,[],0,https://github.com/RyuzakiKK/NoteCrypt/issues/13
+RyuzakiKK/NoteCrypt,closed,2018-10-01 19:41:21,Added Romanian translation,[],0,"Added Romanian translation as per issue
+https://github.com/RyuzakiKK/NoteCrypt/issues/13"
+RyuzakiKK/NoteCrypt,closed,2018-10-01 19:39:59,Add Hungarian translation,[],0,
+RyuzakiKK/NoteCrypt,closed,2018-10-07 13:54:04,Fixed some lang typos,[],0,"
+
+<!-- Reviewable:start -->
+This change is [<img src=""https://reviewable.io/review_button.svg"" height=""34"" align=""absmiddle"" alt=""Reviewable""/>](https://reviewable.io/reviews/ryuzakikk/notecrypt/18)
+<!-- Reviewable:end -->
+"
+RyuzakiKK/NoteCrypt,closed,2018-10-01 17:28:32,Translation of the Strings file to pt-PT,[],0,I took care of the pt-PT translation #13
+RyuzakiKK/NoteCrypt,closed,2018-10-02 07:58:27,Add Russian translation,[],0,As requested in #13
+RyuzakiKK/NoteCrypt,closed,2018-10-01 15:16:16,German Translation added,[],0,Added a german translation of string.xml
+RyuzakiKK/NoteCrypt,closed,2018-10-01 14:13:24,Added Lithuanian Language Support [hacktoberfest],"[Label(name=""hacktoberfest"")]",0,"Hi there, so I've created a new file in the ""app/src/main/res/values-lt-LT/ which is the ""Lithuanian"" or ""Lietuvių kalba"" language. I'm not sure how to implement into the application, and haven't been able to find it.
+I hope you enjoy my contribution!
+
+Regards,
+Trol."
+RyuzakiKK/NoteCrypt,closed,2018-11-11 14:41:14,Provide new translations,"[Label(name=""hacktoberfest"")]",0,"Thanks to all your good contributions right now NoteCrypt is available in English, Italian, Japanese, Brazilian Portuguese, Portuguese, German, Lithuanian, Hungarian, Romanian, Egyptian Arabic, Ukrainian, Greek, French, Kazakh and Russsian.
+More languages would be appreciated.
+
+The strings to translate are about 80 and can be found here https://github.com/RyuzakiKK/NoteCrypt/blob/master/app/src/main/res/values/strings.xml
+
+The new translations needs to be placed inside a new folder called values-xx-rXX  under `/app/src/main/res/` where the first xx is the code of the language, and the other XX is the country code. If in doubt just ask."
+RyuzakiKK/NoteCrypt,closed,2018-10-01 12:11:12,AndroidManifest,[],0,Add support to wider aspect ratio
+RyuzakiKK/NoteCrypt,open,,NoteCrypt crashes when trying to save/return to previous screen on Lineage15.1 (8.1 base),[],0,"The tool crashes when trying to either save the database or when trying to navigate inside it.
+
+This behavior hasn't existed on Lineage14.1 which bases on AOSP 7's code, also did I triple check for missing read/write permissions but no dice.
+
+That said, to edit any entry is impossible by now, however, reading entries work when considering that returning a page will make the tool crash."
+RyuzakiKK/NoteCrypt,open,,NullPointerException when accessing the DB,"[Label(name=""bug""), Label(name=""help wanted"")]",1,"I received a few reports similar to this one:
+
+```
+java.lang.RuntimeException: 
+  at android.app.ActivityThread.performLaunchActivity (ActivityThread.java:2778)
+  at android.app.ActivityThread.handleLaunchActivity (ActivityThread.java:2856)
+  at android.app.ActivityThread.-wrap11 (Unknown Source)
+  at android.app.ActivityThread$H.handleMessage (ActivityThread.java:1589)
+  at android.os.Handler.dispatchMessage (Handler.java:106)
+  at android.os.Looper.loop (Looper.java:164)
+  at android.app.ActivityThread.main (ActivityThread.java:6494)
+  at java.lang.reflect.Method.invoke (Native Method)
+  at com.android.internal.os.RuntimeInit$MethodAndArgsCaller.run (RuntimeInit.java:438)
+  at com.android.internal.os.ZygoteInit.main (ZygoteInit.java:807)
+Caused by: java.lang.NullPointerException: 
+  at com.notecrypt.ui.ReadNoteActivity.onCreate (ReadNoteActivity.java:49)
+  at android.app.Activity.performCreate (Activity.java:7009)
+  at android.app.Activity.performCreate (Activity.java:7000)
+  at android.app.Instrumentation.callActivityOnCreate (Instrumentation.java:1214)
+  at android.app.ActivityThread.performLaunchActivity (ActivityThread.java:2731)
+```
+
+So apparently the problem lays here https://github.com/RyuzakiKK/NoteCrypt/blob/78f7ad1fd1b13a895f29daa6e53cb353c967cfd3/app/src/main/java/com/notecrypt/ui/ReadNoteActivity.java#L49
+
+The `db` variable should not be null because it is initialized before we reach the ReadNoteActivity https://github.com/RyuzakiKK/NoteCrypt/blob/cfbfd3e2528a0256d3f8d087798b7914c6931a5a/app/src/main/java/com/notecrypt/utils/CryptoLoad.java#L180
+
+I need to check more closely what is causing this bug, and right now I'm unable to reproduce it."
+RyuzakiKK/NoteCrypt,closed,2018-08-11 08:51:45,Passwords should be invisible to the accessibility services,[],0,"Due to recent attacks, malicious apps that are using the accessibility service can capture all user inputs. In this case, the passwords should be ignored for the accessibility service, so such attacks cannot happen. This is done by our research project in CISPA, Saarland University, Germany."
+RyuzakiKK/NoteCrypt,closed,2018-07-31 09:32:30,pt-br translation,[],0,pt-br translation
+RyuzakiKK/NoteCrypt,open,,'Enter database filename:' issue,[],0,The field for 'Enter database filename:' is always pre-filled with the latest created database filename. Can you please make the field blank instead?
+RyuzakiKK/NoteCrypt,open,,Feature request: Make encryption optional,[],0,"This app can be used to write, organize, and save unencrypted notes if encryption was optional.
+
+* A ""Encrypted"" checkbox should be marked by default when you hit the CREATE button.
+* A ""Locked""/""Unlocked"" icon should be placed next to encrypted/unencrypted files respectively."
+RyuzakiKK/NoteCrypt,open,,looking for way to read on computer ,[],0,Looking for any test software I can use to read an ncf file on a computer besides using an emulator. Anything like that exist?
+RyuzakiKK/NoteCrypt,open,,Recent list,"[Label(name=""enhancement"")]",0,Can you add an option to delete them or an option to not save them at all?
+RyuzakiKK/NoteCrypt,closed,2017-02-25 15:33:17,Update README.md,[],0,
+RyuzakiKK/NoteCrypt,closed,2017-02-25 11:22:14,japanese translation,[],0,Hello!
+RyuzakiKK/NoteCrypt,closed,2017-02-25 11:18:34,Cannot create db,[],0,"I cannot create db file. I tried creating with initial settings, selecting with ghostcommander and inputting manually. Nothing worked"
